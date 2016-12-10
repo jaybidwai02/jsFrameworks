@@ -161,10 +161,12 @@
 	},
 	"expanded_folders":
 	[
-		"/G/JsFrameworks"
+		"/C/xampp/htdocs/jsFrameworks",
+		"/C/xampp/htdocs/jsFrameworks/React"
 	],
 	"file_history":
 	[
+		"/C/xampp/htdocs/jsFrameworks/jsFrameworks.sublime-workspace",
 		"/F/Documents/js programs/algorithms/index.html",
 		"/F/Documents/js programs/algorithms/js/quickSort.js",
 		"/F/Documents/js programs/algorithms/js/bubbleSort.js",
@@ -318,9 +320,13 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "",
+		"last_filter": "js",
 		"selected_items":
 		[
+			[
+				"js",
+				"G:\\JsFrameworks\\jsFrameworks.sublime-workspace"
+			],
 			[
 				"",
 				"C:\\Users\\user\\Desktop\\test.sublime-workspace"
