@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"cdm",
+				"cdm	React: componentDidMount: fn() { ... }"
+			],
+			[
+				"getE",
+				"getElementById(id)	Element"
+			],
+			[
+				"Rea",
+				"ReactDom"
+			],
+			[
 				"p",
 				"partitionIndex"
 			],
@@ -103,6 +115,33 @@
 	},
 	"buffers":
 	[
+		{
+			"contents": "Package Control Messages\n========================\n\nTheme - Afterglow\n-----------------\n\n  \n  Welcome to Afterglow Theme\n  \n  \n  To activate the theme, add or replace your current theme settings with the code below.\n  \n  \n  Settings for Afterglow\n  {\n      \"theme\": \"Afterglow.sublime-theme\",\n      \"color_scheme\": \"Packages/Theme - Afterglow/Afterglow.tmTheme\"\n  }\n  \n  Settings for Afterglow-blue\n  {\n      \"theme\": \"Afterglow-blue.sublime-theme\",\n      \"color_scheme\": \"Packages/Theme - Afterglow/Afterglow.tmTheme\"\n  }\n  \n  Settings for Afterglow-magenta\n  {\n      \"theme\": \"Afterglow-magenta.sublime-theme\",\n      \"color_scheme\": \"Packages/Theme - Afterglow/Afterglow.tmTheme\"\n  }\n  \n  Settings for Afterglow-orange\n  {\n      \"theme\": \"Afterglow-orange.sublime-theme\",\n      \"color_scheme\": \"Packages/Theme - Afterglow/Afterglow.tmTheme\"\n  }\n  \n  Settings for Afterglow-green\n  {\n      \"theme\": \"Afterglow-green.sublime-theme\",\n      \"color_scheme\": \"Packages/Theme - Afterglow/Afterglow.tmTheme\"\n  }\n  \n  \n  If you know other settings (height of the tabs, sidebar options, ...), visit this page:\n  https://github.com/YabataDesign/afterglow-theme/blob/master/README.md\n  \n  \n  *** IMPORTANT - Make sure to restart Sublime after installing and activating Afterglow ***\n",
+			"settings":
+			{
+				"buffer_size": 1272,
+				"line_ending": "Windows",
+				"name": "Package Control Messages",
+				"read_only": true,
+				"scratch": true
+			}
+		},
+		{
+			"file": "React/js/src/index.js",
+			"settings":
+			{
+				"buffer_size": 485,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "React/js/src/Components/Header/Header.js",
+			"settings":
+			{
+				"buffer_size": 340,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -111,12 +150,32 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 392.0,
+		"height": 400.0,
 		"last_filter": "in",
 		"selected_items":
 		[
 			[
 				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"bab",
+				"Set Syntax: JavaScript (Babel)"
+			],
+			[
+				"babe",
+				"Set Syntax: JavaScript (Babel)"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"scope h",
+				"Scope Hunter: Toggle Instant Scoper"
+			],
+			[
+				"ins",
 				"Package Control: Install Package"
 			],
 			[
@@ -128,23 +187,15 @@
 				"Package Control: Install Package"
 			],
 			[
-				"inst",
-				"Package Control: Install Package"
-			],
-			[
 				"",
 				"Changelog"
-			],
-			[
-				"ins",
-				"Package Control: Install Package"
 			]
 		],
-		"width": 472.0
+		"width": 480.0
 	},
 	"console":
 	{
-		"height": 126.0,
+		"height": 336.0,
 		"history":
 		[
 			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
@@ -162,10 +213,29 @@
 	"expanded_folders":
 	[
 		"/C/xampp/htdocs/jsFrameworks",
-		"/C/xampp/htdocs/jsFrameworks/React"
+		"/C/xampp/htdocs/jsFrameworks/React",
+		"/C/xampp/htdocs/jsFrameworks/React/js",
+		"/C/xampp/htdocs/jsFrameworks/React/js/dist",
+		"/C/xampp/htdocs/jsFrameworks/React/js/src",
+		"/C/xampp/htdocs/jsFrameworks/React/js/src/Components",
+		"/C/xampp/htdocs/jsFrameworks/React/js/src/Components/Header"
 	],
 	"file_history":
 	[
+		"/C/Users/user/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/user/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/C/xampp/htdocs/jsFrameworks/React/js/src/Components/Header/Header.js",
+		"/C/Users/user/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/user/AppData/Roaming/Sublime Text 3/Packages/User/JavaScript-Completions.sublime-settings",
+		"/C/Users/user/AppData/Roaming/Sublime Text 3/Packages/User/AngularJS-sublime-package.sublime-settings",
+		"/C/Users/user/AppData/Roaming/Sublime Text 3/Packages/AngularJS/AngularJS-sublime-package.sublime-settings",
+		"/C/Users/user/AppData/Roaming/Sublime Text 3/Packages/User/AngularJS-completions.sublime-settings",
+		"/C/xampp/htdocs/jsFrameworks/React/js/src/index.js",
+		"/C/xampp/htdocs/jsFrameworks/React/package.json",
+		"/C/xampp/htdocs/jsFrameworks/React/webpack.config.js",
+		"/C/xampp/htdocs/jsFrameworks/React/index.html",
+		"/C/xampp/htdocs/jsFrameworks/React/js/dist/app.js",
+		"/C/xampp/htdocs/jsFrameworks/.gitignore",
 		"/C/xampp/htdocs/jsFrameworks/jsFrameworks.sublime-workspace",
 		"/F/Documents/js programs/algorithms/index.html",
 		"/F/Documents/js programs/algorithms/js/quickSort.js",
@@ -217,7 +287,7 @@
 	],
 	"find":
 	{
-		"height": 30.0
+		"height": 38.0
 	},
 	"find_in_files":
 	{
@@ -231,6 +301,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"changeTitel",
+			"true",
+			"uuuuuuuuuuu",
+			"yyyyjjhhhnnnn",
+			"Jayyiiiiyyxxxxvvvvvvvvvvvvvvvjjjjjjjjj",
 			"ivolve",
 			"++",
 			"Bubble",
@@ -253,14 +328,124 @@
 	"groups":
 	[
 		{
+			"selected": 2,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1272,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								256,
+								291
+							]
+						],
+						"settings":
+						{
+							"auto_indent": false,
+							"default_dir": "C:\\xampp\\htdocs\\jsFrameworks",
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_width": 2,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 220.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "React/js/src/index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 485,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								39,
+								39
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								}
+							],
+							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "React/js/src/Components/Header/Header.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 340,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								173,
+								178
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								}
+							],
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 30.0
+		"height": 38.0
 	},
 	"input":
 	{
@@ -297,6 +482,10 @@
 	{
 		"height": 0.0
 	},
+	"output.scopehunter.results":
+	{
+		"height": 0.0
+	},
 	"pinned_build_system": "",
 	"project": "jsFrameworks.sublime-project",
 	"replace":
@@ -320,9 +509,13 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "js",
+		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"jsf",
+				"C:\\xampp\\htdocs\\jsFrameworks\\jsFrameworks.sublime-project"
+			],
 			[
 				"js",
 				"G:\\JsFrameworks\\jsFrameworks.sublime-workspace"
