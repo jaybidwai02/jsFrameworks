@@ -1,7 +1,10 @@
 module.exports = {
     context:"",
     devtool:"inline-sourcemap",
-    entry: "./js/src/index.js",
+    entry: {
+        app: "./js/src/ProReact.js",
+        cardApp: "./js/src/CardApp.js"
+    },
     module:{
     	loaders: [
     		{
@@ -16,7 +19,7 @@ module.exports = {
     },
     output: {
         path: "./js/dist",
-        filename: "app.js"
+        filename: "[name].js"
     },
     devServer:{
         contentBase:"",
