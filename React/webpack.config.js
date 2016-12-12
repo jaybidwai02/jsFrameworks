@@ -3,7 +3,9 @@ module.exports = {
     devtool:"inline-sourcemap",
     entry: {
         app: "./js/src/ProReact.js",
-        cardApp: "./js/src/CardApp.js"
+        cardApp: "./js/src/CardApp.js",
+        route:"./js/src/route.js",
+        flux:"./js/src/flux.js"
     },
     module:{
     	loaders: [
