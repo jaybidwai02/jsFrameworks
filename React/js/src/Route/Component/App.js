@@ -15,7 +15,7 @@ export default class App extends Component{
 				{this.props.children}
 				<div>
 					<h1>This is Navigation</h1>
-					<Link to="menu">Menu</Link>
+					<Link to="menu" activeClassName="active">Menu</Link>
 					<Link to="contact">contact</Link>
 					<button onClick={this.switchState.bind(this)}>Contact</button>
 
