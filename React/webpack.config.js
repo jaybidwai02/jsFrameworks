@@ -5,7 +5,8 @@ module.exports = {
         app: "./js/src/ProReact.js",
         cardApp: "./js/src/CardApp.js",
         route:"./js/src/route.js",
-        flux:"./js/src/flux.js"
+        flux:"./js/src/flux.js",
+        flux1:"./js/src/flux1.js"
     },
     module:{
     	loaders: [
