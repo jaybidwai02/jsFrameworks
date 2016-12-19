@@ -6,7 +6,8 @@ module.exports = {
         cardApp: "./js/src/CardApp.js",
         route:"./js/src/route.js",
         flux:"./js/src/flux.js",
-        flux1:"./js/src/flux1.js"
+        flux1:"./js/src/flux1.js",
+        redux:"./js/src/redux.js"
     },
     module:{
     	loaders: [
