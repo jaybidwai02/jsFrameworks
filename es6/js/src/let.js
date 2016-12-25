@@ -27,3 +27,14 @@ function es6Let(){
 	//console.log('Count is  - ',count);
 }
 es6Let();
+
+
+function Add(val) {
+	 this.val= val; 
+	this.add=function(arr){
+		var self = this
+		return arr.map(function (x) { 
+			return self.val + x ;
+		});
+	}
+}
