@@ -5,6 +5,8 @@ module.exports = {
         let: "./js/src/let.js",
         arrowFunction: "./js/src/arrowFunction.js",
         templateLiteral: "./js/src/templateLiteral.js",
+        generator: ["babel-polyfill","./js/src/generator.js"],
+        generatorAsynch: ["babel-polyfill","./js/src/generatorAsynch.js"],
         spread: "./js/src/spread.js"
     },
     module:{
