@@ -3,6 +3,7 @@ module.exports = {
     devtool:"inline-sourcemap",
     entry: {
         let: "./js/src/let.js",
+        destructuring: "./js/src/destructuring.js",
         arrowFunction: "./js/src/arrowFunction.js",
         templateLiteral: "./js/src/templateLiteral.js",
         class: "./js/src/class.js",
