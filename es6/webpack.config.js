@@ -5,6 +5,10 @@ module.exports = {
         let: "./js/src/let.js",
         arrowFunction: "./js/src/arrowFunction.js",
         templateLiteral: "./js/src/templateLiteral.js",
+        class: "./js/src/class.js",
+        module: "./js/src/module.js",
+        singelDefaultExport: "./js/src/singelDefaultExport.js",
+        iterator: ["babel-polyfill","./js/src/iterator.js"],
         generator: ["babel-polyfill","./js/src/generator.js"],
         generatorAsynch: ["babel-polyfill","./js/src/generatorAsynch.js"],
         spread: "./js/src/spread.js"
