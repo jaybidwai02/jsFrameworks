@@ -1,10 +1,10 @@
-/*function generator(){
+function generator(){
 	console.log("UI");
 	console.log("DEV");
 	console.log("QA");
 }
 
-generator();*/
+generator();
 
 
 /*function* gen(){
