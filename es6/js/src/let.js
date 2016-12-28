@@ -28,13 +28,3 @@ function es6Let(){
 }
 es6Let();
 
-
-function Add(val) {
-	 this.val= val; 
-	this.add=function(arr){
-		var self = this
-		return arr.map(function (x) { 
-			return self.val + x ;
-		});
-	}
-}
