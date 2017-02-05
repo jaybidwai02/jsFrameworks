@@ -1,0 +1,22 @@
+@media screen and (max-width:1023px){
+	.container{
+		width: 100%;
+		margin: 0;
+		.flightSerchHeader{
+			border-top: 0;
+			border-right: 0;
+			border-left: 0;
+			padding: 20px 0;
+		}
+
+		.content{
+		    padding: 20px 15px;
+			.leftSection,.rightSection{
+			  width: 100%;
+			}
+			.rightSection{
+				padding: 30px 0;
+			}
+		}
+	}
+}

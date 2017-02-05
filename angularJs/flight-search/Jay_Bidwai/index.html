@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Flight Search</title>
+	<link rel="stylesheet" href="app/dist/css/app.css">
+</head>
+<body ng-app="FlightSearch">
+
+  <div class="container">
+
+	<header id="header" class="flightSerchHeader">
+		<h1 class="headding">Flight Search Engine</h1>
+	</header>
+
+	<section class="content">
+	
+	  <div ng-controller="flightController as flight" class="clear">
+
+		<section class="leftSection fl">	  	
+			<div class="searchFlights">
+				<ul class="tabs">
+					<li ng-class="{active:flight.isRoundTrip}">
+						<a href="javascript:;" ng-click="flight.setTrip(true)">Round Trip</a>
+					</li>
+					<li ng-class="{active:flight.isRoundTrip == false}"><a href="javascript:;" ng-click="flight.setTrip(false)">One Way Trip</a></li>
+				</ul>
+				<div class="searchForm">
+			    	<form name="searchFlight" ng-submit="flight.getFlightData()">
+
+			    	<div class="inpWrap">
+					    <label>From</label>
+					    <dvi class="inputControl">	
+					    	<input type="text" name="departingCity" ng-model="flight.flightModels.departingCity" placeholder="Enter Origin City" required>
+						</dvi>
+					</div>
+
+					<div class="inpWrap">
+						<label>To</label>
+						<dvi class="inputControl">
+							<input type="text" name="arrivalCity" ng-model="flight.flightModels.arrivalCity" placeholder="Enter Destination City" required>
+						</dvi>
+					</div>
+
+					<div class="inpWrap">
+						<label>Depart</label>
+						<dvi class="inputControl">
+							<input type="date" name="departingDate" ng-model="flight.flightModels.departingDate" required>
+						</dvi>
+					</div>
+
+					<div class="inpWrap" ng-show="flight.isRoundTrip">
+						<label>Return</label>
+						<dvi class="inputControl">
+							<input type="date" name="returningDate" ng-model="flight.flightModels.returningDate" id="returnDate" required>
+						</dvi>
+					</div>
+					<div class="inpWrap">
+						<label>Passengers</label>
+						<dvi class="inputControl">
+							<select name="passengers" ng-options="passenger for passenger in flight.passengers" ng-model="flight.flightModels.passengers">
+								<option style="display:none" value="">Number of Passengers</option>
+							</select>
+						</dvi>
+					</div>
+
+					<div class="inpWrap">
+						<dvi class="inputControl">
+							<input type="submit" value="Search" class="btn">
+						</dvi>
+					</div>
+			</form>
+		        </div>
+
+				<div class="priceFilter">
+				    <h2>Refine Search</h2>
+					<rzslider rz-slider-model="flight.minPrice" rz-slider-high="flight.maxPrice" rz-slider-options="flight.sliderOptions"></rzslider>
+				</div>			
+			</div>
+		</section>
+
+		<section class="rightSection fl">
+			<h2 class="mb20 msg" ng-hide="flight.isSearchExecuted">To find relavent flights Run the Search</h2>
+			<div class="searchCriteria mb20 clear" ng-show="flight.isSearchExecuted">
+				<div class="trip fl">
+					<p ng-bind="flight.srcDesti | uppercase"></p>
+				</div>
+				<div class="date fr">
+					<span ng-bind-template="Depart: {{flight.departDate | date:'MMM, dd yyyy'}}"></span>
+					<span ng-show="flight.returnDate" ng-bind-template="Return: {{flight.returnDate | date:'MMM, dd yyyy'}}"></span>
+					<span ng-bind-template="Passengers: {{flight.passengersInTrip}}" ng-show="flight.passengersInTrip"></span>
+				</div>
+			</div>
+			<ul>
+				<li class="serchResult" ng-repeat="flight in flight.searchResult | orderBy:flight.sortByPrice track by $index">
+					<div class="flightInfo">
+						<div class="showFlight">
+							<h2 ng-bind-template="{{'Rs. '}} {{flight.returnTrip ? (flight.totalPrice + flight.returnTrip.totalPrice) : flight.totalPrice}}"></h2>
+							<div class="clear">
+								<div class="oneWay fl">
+									<p ng-bind="flight.FlightNumber" class="flightNumber"></p>
+									<p ng-bind-template="{{flight.originAbrivation}} {{'>'}} {{flight.destiAbrivation}}"></p>
+									<p ng-bind-template="Departure: {{flight.Departure}}"></p>
+									<p ng-bind-template="Arrival: {{flight.Arrival}}"></p>
+								</div>
+								<div class="returnFlight fr" ng-if="flight.returnTrip">
+									<p ng-bind="flight.returnTrip.FlightNumber" class="flightNumber"></p>
+									<p ng-bind-template="{{flight.returnTrip.originAbrivation}} {{'>'}} {{flight.returnTrip.destiAbrivation}}"></p>
+									<p ng-bind-template="Departure: {{flight.returnTrip.Departure}}"></p>
+									<p ng-bind-template="Arrival: {{flight.returnTrip.Arrival}}"></p>
+								</div>
+							</div>
+						</div>
+						<div class="hoverState">
+							<div class="layer"></div>
+							<a href="javascript:;" class="btn book">Book This Flight</a>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<div class="noResult" ng-hide="flight.searchResult.length">
+				<h2 class="mb20">No Routes Found between {{flight.srcDesti}} </h2>
+				<h2  class="mb20 info">Only Following Routes are availabel</h2>
+				<ul>
+					<li>
+						<p>Mumbai - Pune - Mumbai</p>
+					</li>
+					<li>
+						<p>Pune - Delhi - Pune</p>
+					</li>
+					<li>
+						<p>Mumbai - Delhi - Mumbai</p>
+					</li>
+					<li>
+						<p>Pune - Nagpur</p>
+					</li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	</section>
+
+ </div>
+
+
+	<script src="app/dist/js/lib.js"></script>
+	<script src="app/dist/js/app.js"></script>
+</body>
+</html>
