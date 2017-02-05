@@ -25,8 +25,8 @@ What I Covered In This POC
 	A. Initialization
 	B. Action handler in controller
 	C. Service function call -
-			** used Spies of jasmine to check service function is being called or not.
-			** used Spies of jasmine to check service function return value.
+			** used Spies(spyOn) of jasmine to check service function is being called or not.
+			** used Spies(spyOn) of jasmine to check service function return value.
 
 
 2. Logical Sepration of code
@@ -34,4 +34,7 @@ What I Covered In This POC
 3. Easy to understand logical code.
 
 4. Structural placement of code
+
+5. Comments are present in code to help to understand task of function
+
 
