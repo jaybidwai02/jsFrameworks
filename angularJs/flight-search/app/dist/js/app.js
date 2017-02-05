@@ -49,7 +49,7 @@ var app = angular.module('FlightSearch',['rzModule']);
 		function setPriceFliter(flightArr, isOneWay){
 
 			if(typeof flightArr !== "undefined" && flightArr.length){
-
+				
 				var allFlightFare = flightArr.map(function(flight){
 						return isOneWay ? flight.totalPrice : (flight.totalPrice + flight.returnTrip.totalPrice);
 					})
@@ -57,8 +57,11 @@ var app = angular.module('FlightSearch',['rzModule']);
 				_this.minPrice = Math.min.apply(Math, allFlightFare);
 				_this.maxPrice = Math.max.apply(Math, allFlightFare);
 
+				_this.minPrice = (_this.minPrice == _this.maxPrice) ? 0 : _this.minPrice;
+
 				_this.sliderOptions.floor = _this.minPrice;
 				_this.sliderOptions.ceil = _this.maxPrice;
+				console.log(_this.sliderOptions);
 			}else{
 				_this.sliderOptions.floor = 0;
 				_this.sliderOptions.ceil = 0;
@@ -94,7 +97,7 @@ var app = angular.module('FlightSearch',['rzModule']);
 
 						_this.searchResult = _this.filteredFlights = res.fromOriginToDestination;
 
-						setPriceFliter(res.fromDestinationToOrigin,true);					
+						setPriceFliter(res.fromOriginToDestination,true);					
 
 					}else if(typeof res.fromDestinationToOrigin != "undefined"){
 
@@ -150,11 +153,11 @@ var app = angular.module('FlightSearch',['rzModule']);
 
 			return flightArray.filter(function(flight){
 
-				var departingCity 		= flight.originCity.toLowerCase(),
-					arrivalCity 		= flight.destinationCity.toLowerCase(),
+				var departingCity 		= flight.originCity.toLowerCase().replace(/ /g,''),
+					arrivalCity 		= flight.destinationCity.toLowerCase().replace(/ /g,''),
 
-					searchOrigin 		= query.originCity.toLowerCase(),
-					serachDestination	= query.destinationCity.toLowerCase();
+					searchOrigin 		= query.originCity.toLowerCase().replace(/ /g,''),
+					serachDestination	= query.destinationCity.toLowerCase().replace(/ /g,'');
 
 				if (departingCity == arrivalCity) {
 				    return false;

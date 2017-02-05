@@ -45,7 +45,7 @@
 		function setPriceFliter(flightArr, isOneWay){
 
 			if(typeof flightArr !== "undefined" && flightArr.length){
-
+				
 				var allFlightFare = flightArr.map(function(flight){
 						return isOneWay ? flight.totalPrice : (flight.totalPrice + flight.returnTrip.totalPrice);
 					})
@@ -53,8 +53,11 @@
 				_this.minPrice = Math.min.apply(Math, allFlightFare);
 				_this.maxPrice = Math.max.apply(Math, allFlightFare);
 
+				_this.minPrice = (_this.minPrice == _this.maxPrice) ? 0 : _this.minPrice;
+
 				_this.sliderOptions.floor = _this.minPrice;
 				_this.sliderOptions.ceil = _this.maxPrice;
+				console.log(_this.sliderOptions);
 			}else{
 				_this.sliderOptions.floor = 0;
 				_this.sliderOptions.ceil = 0;
@@ -90,7 +93,7 @@
 
 						_this.searchResult = _this.filteredFlights = res.fromOriginToDestination;
 
-						setPriceFliter(res.fromDestinationToOrigin,true);					
+						setPriceFliter(res.fromOriginToDestination,true);					
 
 					}else if(typeof res.fromDestinationToOrigin != "undefined"){
 

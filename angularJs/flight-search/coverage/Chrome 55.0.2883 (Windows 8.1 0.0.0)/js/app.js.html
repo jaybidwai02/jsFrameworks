@@ -20,14 +20,14 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">11.83% </span>
+        <span class="strong">11.58% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>11/93</span>
+        <span class='fraction'>11/95</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/36</span>
+        <span class='fraction'>0/38</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">14.29% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>3/21</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">11.83% </span>
+        <span class="strong">11.58% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>11/93</span>
+        <span class='fraction'>11/95</span>
       </div>
     </div>
   </div>
@@ -366,7 +366,10 @@
 321
 322
 323
-324</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+324
+325
+326
+327</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -425,6 +428,9 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -740,7 +746,7 @@ var app = angular.module('FlightSearch',['rzModule']);
 <span class="fstat-no" title="function not covered" >		function setPriceFliter(flightArr, isOneWay){</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >			if(typeof flightArr !== "undefined" &amp;&amp; flightArr.length){</span>
-&nbsp;
+				
 <span class="cstat-no" title="statement not covered" >				var allFlightFare = flightArr.map(<span class="fstat-no" title="function not covered" >function(flight){</span></span>
 <span class="cstat-no" title="statement not covered" >						return isOneWay ? flight.totalPrice : (flight.totalPrice + flight.returnTrip.totalPrice);</span>
 					})
@@ -748,8 +754,11 @@ var app = angular.module('FlightSearch',['rzModule']);
 <span class="cstat-no" title="statement not covered" >				_this.minPrice = Math.min.apply(Math, allFlightFare);</span>
 <span class="cstat-no" title="statement not covered" >				_this.maxPrice = Math.max.apply(Math, allFlightFare);</span>
 &nbsp;
+<span class="cstat-no" title="statement not covered" >				_this.minPrice = (_this.minPrice == _this.maxPrice) ? 0 : _this.minPrice;</span>
+&nbsp;
 <span class="cstat-no" title="statement not covered" >				_this.sliderOptions.floor = _this.minPrice;</span>
 <span class="cstat-no" title="statement not covered" >				_this.sliderOptions.ceil = _this.maxPrice;</span>
+<span class="cstat-no" title="statement not covered" >				console.log(_this.sliderOptions);</span>
 			}else{
 <span class="cstat-no" title="statement not covered" >				_this.sliderOptions.floor = 0;</span>
 <span class="cstat-no" title="statement not covered" >				_this.sliderOptions.ceil = 0;</span>
@@ -785,7 +794,7 @@ var app = angular.module('FlightSearch',['rzModule']);
 &nbsp;
 <span class="cstat-no" title="statement not covered" >						_this.searchResult = _this.filteredFlights = res.fromOriginToDestination;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >						setPriceFliter(res.fromDestinationToOrigin,true);					</span>
+<span class="cstat-no" title="statement not covered" >						setPriceFliter(res.fromOriginToDestination,true);					</span>
 &nbsp;
 					}else <span class="cstat-no" title="statement not covered" >if(typeof res.fromDestinationToOrigin != "undefined"){</span>
 &nbsp;
@@ -841,11 +850,11 @@ var app = angular.module('FlightSearch',['rzModule']);
 &nbsp;
 <span class="cstat-no" title="statement not covered" >			return flightArray.filter(<span class="fstat-no" title="function not covered" >function(flight){</span></span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >				var departingCity 		= flight.originCity.toLowerCase(),</span>
-					arrivalCity 		= flight.destinationCity.toLowerCase(),
+<span class="cstat-no" title="statement not covered" >				var departingCity 		= flight.originCity.toLowerCase().replace(/ /g,''),</span>
+					arrivalCity 		= flight.destinationCity.toLowerCase().replace(/ /g,''),
 &nbsp;
-					searchOrigin 		= query.originCity.toLowerCase(),
-					serachDestination	= query.destinationCity.toLowerCase();
+					searchOrigin 		= query.originCity.toLowerCase().replace(/ /g,''),
+					serachDestination	= query.destinationCity.toLowerCase().replace(/ /g,'');
 &nbsp;
 <span class="cstat-no" title="statement not covered" >				if (departingCity == arrivalCity) {</span>
 <span class="cstat-no" title="statement not covered" >				    return false;</span>
@@ -1018,7 +1027,7 @@ var app = angular.module('FlightSearch',['rzModule']);
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Feb 05 2017 20:31:56 GMT+0530 (India Standard Time)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Feb 05 2017 20:50:09 GMT+0530 (India Standard Time)
 </div>
 </div>
 <script src="../prettify.js"></script>
