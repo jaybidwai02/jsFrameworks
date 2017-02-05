@@ -5,7 +5,7 @@
 
 		_this.data = JsonDataService.data;
 		
-
+		//Return flight from origin to destination
 		function fromOriginToDestination(flightArray, query){
 
 			return flightArray.filter(function(flight){
@@ -27,6 +27,11 @@
 			});
 		};
 
+		/*
+		*
+		Return flight from destination to origin - it will only get execute if user fires and Return Trip query
+		*
+		*/
 		function fromDestinationToOrigin(flightArray, query){
 			return flightArray.filter(function(flight){
 
@@ -47,6 +52,11 @@
 			});
 		}
 
+		/*
+		*
+		Recives the user query from controller and fliter the flight data based on query and return the result to controller 
+		*
+		*/
 		_this.POST = function(query){
 
 			var makePromise = $q.defer();

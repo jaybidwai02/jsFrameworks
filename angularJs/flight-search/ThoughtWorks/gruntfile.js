@@ -39,6 +39,6 @@ module.exports = function(grunt) {
 
   grunt.registerTask('watchCss', ['watch:sToc']);
   grunt.registerTask('watchJs', ['watch:scripts']);
-  grunt.registerTask('default', ['sass']);
+  grunt.registerTask('default', ['sass','concat']);
 
 };

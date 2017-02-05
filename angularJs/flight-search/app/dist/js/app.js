@@ -31,6 +31,7 @@ var app = angular.module('FlightSearch',['rzModule']);
             }
         };		
 
+        //to set trip type and validation for return date
         _this.setTrip = function(trip){
         	_this.isRoundTrip = trip;
         	var returnDate = angular.element(document.getElementById('returnDate'));
@@ -42,10 +43,12 @@ var app = angular.module('FlightSearch',['rzModule']);
 
         };
 
+        //To show result in Ascending order of price
 		_this.sortByPrice = function(flightEntry){
 			return flightEntry.returnTrip ? (flightEntry.totalPrice + flightEntry.returnTrip.totalPrice) : flightEntry.totalPrice
 		}
 
+		//To set min and max price of search result which will update slider options
 		function setPriceFliter(flightArr, isOneWay){
 
 			if(typeof flightArr !== "undefined" && flightArr.length){
@@ -61,7 +64,6 @@ var app = angular.module('FlightSearch',['rzModule']);
 
 				_this.sliderOptions.floor = _this.minPrice;
 				_this.sliderOptions.ceil = _this.maxPrice;
-				console.log(_this.sliderOptions);
 			}else{
 				_this.sliderOptions.floor = 0;
 				_this.sliderOptions.ceil = 0;
@@ -69,8 +71,10 @@ var app = angular.module('FlightSearch',['rzModule']);
 
 		};
 
+		//set initial min and max value to slider
 		setPriceFliter(_this.searchResult, true);
 
+		//Accept the user query and fetch flight data form service based on query
 		_this.getFlightData = function(){
 
 			_this.isSearchExecuted 	= true;
@@ -123,6 +127,7 @@ var app = angular.module('FlightSearch',['rzModule']);
 				 });
 		};
 
+		//filter the result on slider action
 		function refineSearch(){
 			_this.searchResult = _this.filteredFlights.filter(function(flight){
 
@@ -148,7 +153,7 @@ var app = angular.module('FlightSearch',['rzModule']);
 
 		_this.data = JsonDataService.data;
 		
-
+		//Return flight from origin to destination
 		function fromOriginToDestination(flightArray, query){
 
 			return flightArray.filter(function(flight){
@@ -170,6 +175,11 @@ var app = angular.module('FlightSearch',['rzModule']);
 			});
 		};
 
+		/*
+		*
+		Return flight from destination to origin - it will only get execute if user fires and Return Trip query
+		*
+		*/
 		function fromDestinationToOrigin(flightArray, query){
 			return flightArray.filter(function(flight){
 
@@ -190,6 +200,11 @@ var app = angular.module('FlightSearch',['rzModule']);
 			});
 		}
 
+		/*
+		*
+		Recives the user query from controller and fliter the flight data based on query and return the result to controller 
+		*
+		*/
 		_this.POST = function(query){
 
 			var makePromise = $q.defer();

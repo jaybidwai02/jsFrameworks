@@ -27,6 +27,7 @@
             }
         };		
 
+        //to set trip type and validation for return date
         _this.setTrip = function(trip){
         	_this.isRoundTrip = trip;
         	var returnDate = angular.element(document.getElementById('returnDate'));
@@ -38,10 +39,12 @@
 
         };
 
+        //To show result in Ascending order of price
 		_this.sortByPrice = function(flightEntry){
 			return flightEntry.returnTrip ? (flightEntry.totalPrice + flightEntry.returnTrip.totalPrice) : flightEntry.totalPrice
 		}
 
+		//To set min and max price of search result which will update slider options
 		function setPriceFliter(flightArr, isOneWay){
 
 			if(typeof flightArr !== "undefined" && flightArr.length){
@@ -57,7 +60,6 @@
 
 				_this.sliderOptions.floor = _this.minPrice;
 				_this.sliderOptions.ceil = _this.maxPrice;
-				console.log(_this.sliderOptions);
 			}else{
 				_this.sliderOptions.floor = 0;
 				_this.sliderOptions.ceil = 0;
@@ -65,8 +67,10 @@
 
 		};
 
+		//set initial min and max value to slider
 		setPriceFliter(_this.searchResult, true);
 
+		//Accept the user query and fetch flight data form service based on query
 		_this.getFlightData = function(){
 
 			_this.isSearchExecuted 	= true;
@@ -119,6 +123,7 @@
 				 });
 		};
 
+		//filter the result on slider action
 		function refineSearch(){
 			_this.searchResult = _this.filteredFlights.filter(function(flight){
 

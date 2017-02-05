@@ -61,7 +61,6 @@ var app = angular.module('FlightSearch',['rzModule']);
 
 				_this.sliderOptions.floor = _this.minPrice;
 				_this.sliderOptions.ceil = _this.maxPrice;
-				console.log(_this.sliderOptions);
 			}else{
 				_this.sliderOptions.floor = 0;
 				_this.sliderOptions.ceil = 0;
