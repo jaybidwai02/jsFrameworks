@@ -31,17 +31,6 @@ var app = angular.module('FlightSearch',['rzModule']);
             }
         };		
 
-        _this.setTrip = function(trip){
-        	_this.isRoundTrip = trip;
-        	var returnDate = angular.element(document.getElementById('returnDate'));
-        	if(_this.isRoundTrip){
-        		returnDate.attr('required','required');
-        	}else{
-        		returnDate.removeAttr('required');
-        	}
-
-        };
-
 		_this.sortByPrice = function(flightEntry){
 			return flightEntry.returnTrip ? (flightEntry.totalPrice + flightEntry.returnTrip.totalPrice) : flightEntry.totalPrice
 		}
@@ -72,13 +61,9 @@ var app = angular.module('FlightSearch',['rzModule']);
 
 			_this.isSearchExecuted 	= true;
 			_this.trip 				= _this.isRoundTrip;
-			_this.departDate 		= _this.flightModels.departingDate,
-			_this.returnDate 		= _this.flightModels.returningDate,
-			_this.passengersInTrip	= _this.flightModels.passengers;
 
 			var origin 				= _this.flightModels.departingCity,
 				 desti 				= _this.flightModels.arrivalCity;
-
 
 			_this.srcDesti = _this.trip ? (origin + '  >  ' + desti + '  >  ' + origin) : (origin + '  >  ' + desti);
 

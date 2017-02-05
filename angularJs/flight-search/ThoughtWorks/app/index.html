@@ -21,9 +21,9 @@
 			<div class="searchFlights">
 				<ul class="tabs">
 					<li ng-class="{active:flight.isRoundTrip}">
-						<a href="javascript:;" ng-click="flight.setTrip(true)">Round Trip</a>
+						<a href="javascript:;" ng-click="flight.isRoundTrip = true">Round Trip</a>
 					</li>
-					<li ng-class="{active:flight.isRoundTrip == false}"><a href="javascript:;" ng-click="flight.setTrip(false)">One Way Trip</a></li>
+					<li ng-class="{active:flight.isRoundTrip == false}"><a href="javascript:;" ng-click="flight.isRoundTrip = false">One Way Trip</a></li>
 				</ul>
 				<div class="searchForm">
 			    	<form name="searchFlight" ng-submit="flight.getFlightData()">
@@ -49,10 +49,10 @@
 						</dvi>
 					</div>
 
-					<div class="inpWrap" ng-show="flight.isRoundTrip">
+					<div class="inpWrap">
 						<label>Return</label>
-						<dvi class="inputControl">
-							<input type="date" name="returningDate" ng-model="flight.flightModels.returningDate" id="returnDate" required>
+						<dvi class="inputControl" ng-show="flight.isRoundTrip">
+							<input type="date" name="returningDate" ng-model="flight.flightModels.returningDate">
 						</dvi>
 					</div>
 					<div class="inpWrap">
@@ -86,9 +86,9 @@
 					<p ng-bind="flight.srcDesti | uppercase"></p>
 				</div>
 				<div class="date fr">
-					<span ng-bind-template="Depart: {{flight.departDate | date:'MMM, dd yyyy'}}"></span>
-					<span ng-show="flight.returnDate" ng-bind-template="Return: {{flight.returnDate | date:'MMM, dd yyyy'}}"></span>
-					<span ng-bind-template="Passengers: {{flight.passengersInTrip}}" ng-show="flight.passengersInTrip"></span>
+					<span ng-bind-template="Depart: {{flight.flightModels.departingDate | date:'MMM, dd yyyy'}}"></span>
+					<span ng-show="flight.trip" ng-bind-template="Return: {{flight.flightModels.returningDate | date:'MMM, dd yyyy'}}"></span>
+					<span ng-bind-template="Passengers: {{flight.flightModels.passengers}}"></span>
 				</div>
 			</div>
 			<ul>
