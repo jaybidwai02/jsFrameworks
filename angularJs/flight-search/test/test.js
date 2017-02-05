@@ -129,4 +129,13 @@
 
 		});
 
+		describe('Trip Type',function(){
+
+			it('Should Set isRoundTrip to true/false as per passed arguments',function(){
+				controller.setTrip(true);
+				expect(controller.isRoundTrip).toBeTruthy();
+			});
+
+		})
+
 	});
