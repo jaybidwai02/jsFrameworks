@@ -10,11 +10,11 @@
 
 			return flightArray.filter(function(flight){
 
-				var departingCity 		= flight.originCity.toLowerCase(),
-					arrivalCity 		= flight.destinationCity.toLowerCase(),
+				var departingCity 		= flight.originCity.toLowerCase().replace(/ /g,''),
+					arrivalCity 		= flight.destinationCity.toLowerCase().replace(/ /g,''),
 
-					searchOrigin 		= query.originCity.toLowerCase(),
-					serachDestination	= query.destinationCity.toLowerCase();
+					searchOrigin 		= query.originCity.toLowerCase().replace(/ /g,''),
+					serachDestination	= query.destinationCity.toLowerCase().replace(/ /g,'');
 
 				if (departingCity == arrivalCity) {
 				    return false;

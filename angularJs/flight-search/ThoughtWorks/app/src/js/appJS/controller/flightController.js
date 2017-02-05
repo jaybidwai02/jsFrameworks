@@ -27,6 +27,17 @@
             }
         };		
 
+        _this.setTrip = function(trip){
+        	_this.isRoundTrip = trip;
+        	var returnDate = angular.element(document.getElementById('returnDate'));
+        	if(_this.isRoundTrip){
+        		returnDate.attr('required','required');
+        	}else{
+        		returnDate.removeAttr('required');
+        	}
+
+        };
+
 		_this.sortByPrice = function(flightEntry){
 			return flightEntry.returnTrip ? (flightEntry.totalPrice + flightEntry.returnTrip.totalPrice) : flightEntry.totalPrice
 		}
@@ -34,7 +45,7 @@
 		function setPriceFliter(flightArr, isOneWay){
 
 			if(typeof flightArr !== "undefined" && flightArr.length){
-
+				
 				var allFlightFare = flightArr.map(function(flight){
 						return isOneWay ? flight.totalPrice : (flight.totalPrice + flight.returnTrip.totalPrice);
 					})
@@ -42,8 +53,11 @@
 				_this.minPrice = Math.min.apply(Math, allFlightFare);
 				_this.maxPrice = Math.max.apply(Math, allFlightFare);
 
+				_this.minPrice = (_this.minPrice == _this.maxPrice) ? 0 : _this.minPrice;
+
 				_this.sliderOptions.floor = _this.minPrice;
 				_this.sliderOptions.ceil = _this.maxPrice;
+				console.log(_this.sliderOptions);
 			}else{
 				_this.sliderOptions.floor = 0;
 				_this.sliderOptions.ceil = 0;
@@ -57,9 +71,13 @@
 
 			_this.isSearchExecuted 	= true;
 			_this.trip 				= _this.isRoundTrip;
+			_this.departDate 		= _this.flightModels.departingDate,
+			_this.returnDate 		= _this.flightModels.returningDate,
+			_this.passengersInTrip	= _this.flightModels.passengers;
 
 			var origin 				= _this.flightModels.departingCity,
 				 desti 				= _this.flightModels.arrivalCity;
+
 
 			_this.srcDesti = _this.trip ? (origin + '  >  ' + desti + '  >  ' + origin) : (origin + '  >  ' + desti);
 
@@ -75,7 +93,7 @@
 
 						_this.searchResult = _this.filteredFlights = res.fromOriginToDestination;
 
-						setPriceFliter(res.fromDestinationToOrigin,true);					
+						setPriceFliter(res.fromOriginToDestination,true);					
 
 					}else if(typeof res.fromDestinationToOrigin != "undefined"){
 
