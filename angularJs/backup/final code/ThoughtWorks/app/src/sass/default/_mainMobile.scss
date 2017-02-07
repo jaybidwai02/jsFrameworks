@@ -1,0 +1,63 @@
+@media screen and (max-width:768px){
+	.container{
+		.content{
+			.rightSection{
+				.msg{
+					font-size: 22px;
+				}
+				.searchCriteria{
+					padding: 10px;
+					&.mb20{
+						margin-bottom: 10px;
+					}
+				}
+				.flightInfo{
+					padding: 10px;
+					margin-bottom: 15px;
+					.showFlight{
+						h2{
+							font-size: 20px;
+						}
+						p{
+							font-size: 16px;
+						}
+						.flightNumber{
+						 font-size: 14px;
+						}
+					}
+				}
+			}
+		}
+	}
+};
+
+@media screen and (max-width:440px){
+	.container{
+		.content{
+			.rightSection{
+				.searchCriteria{
+					.trip{
+						width: 100%;
+						margin-bottom: 10px;
+					}
+					.date{
+						float: none;
+						width: 100%;
+					}
+				}
+				.flightInfo{
+					.showFlight{
+						.oneWay{
+							width: 100%;
+							margin-bottom: 25px;
+						}
+						.returnFlight{
+							float: none;
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
+	}
+}

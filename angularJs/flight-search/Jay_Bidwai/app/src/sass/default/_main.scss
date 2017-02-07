@@ -1,0 +1,211 @@
+//variables
+$border:#b2b2b2;
+$active:#ef506a;
+$activeHover:#df425c;
+$gray:#999999;
+$white:#fff;
+$fontColor:#000;
+
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.mb20{
+	margin-bottom: 20px;
+}
+.clear:before,.clear:after,ul:before,ul:after
+{
+	clear: both;
+	content: " ";
+	display: table; 
+}
+*{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+li{
+	list-style: none;	
+}
+a{
+	text-decoration: none;
+}
+body{
+	background-color: $gray; 
+	color: #000; 
+}
+
+.btn{
+	background-color: $active; 
+	color: $white; 
+}
+.btn:hover{
+	background-color: $activeHover; 
+	cursor: pointer;
+}
+.container{
+	width: 990px;
+	margin: 0 auto;
+	-ms-overflow-x: hidden;
+	overflow-x: hidden;
+	background-color: $white; 
+	padding: 0;
+	.flightSerchHeader{
+		padding: 30px 0;
+		border: 1px solid $border; 
+		.headding{
+			text-align: center;
+		}
+		// margin-bottom: 30px;
+	}
+
+	.content{
+		padding: 30px;
+		.leftSection{
+			width: 300px;
+			padding: 10px 0;
+			.tabs{
+				li{
+					float: left;					
+					border: 1px solid $border;
+					border-bottom: none;
+					a{
+						padding: 10px;
+						display: inline-block;
+						color: $fontColor; 
+					}
+					&.active{
+						background-color: $active;
+						border: 1px solid $active; 
+						a{
+							color: $white; 
+						} 
+					}
+				}
+				/* li:hover{
+					background-color: $active;
+					border: 1px solid $active; 
+					a{
+						color: $white; 
+					} 
+				} */
+			}
+			.searchForm{
+				border: 1px solid $border;
+				padding: 10px;
+				.inpWrap{
+					margin-bottom: 10px;
+					label{
+						display: block;
+					}
+					.inputControl{
+					width: 100%;
+					display: block;
+					border: 1px solid $border;					
+					input[type=text],input[type=submit],input[type=date],select{
+						border: none;
+						width: 100%;
+						padding: 10px;
+					} 
+				}
+				}
+			}
+			.priceFilter{
+				margin-top: 20px;
+				border: 1px solid $border;
+				padding: 20px 20px 40px 20px;
+				h2{
+					font-weight: normal;
+					margin-bottom: 20px;
+				}
+			}
+		}
+		.rightSection{
+			width: 630px;
+			padding: 30px 0 30px 30px;
+			.msg{
+				font-weight: normal;
+			}
+			.searchCriteria{
+				border: 1px solid $border;
+				padding: 30px;
+				.date{
+					max-width: 300px;
+					span{
+						display: block;
+					}
+				}
+			}
+			.flightInfo{
+				width: 100%;
+				padding: 20px;
+				min-height: 100px;
+				margin-bottom: 25px;
+				border: 1px solid $border;  
+				float: none;
+				position: relative;
+				.hoverState{
+					display: none;
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					left: 0;
+					top: 0;
+					.layer{
+						height: 100%;
+						width: 100%;
+						background-color: #fff;
+						opacity: 0.78;
+					}
+					.book{
+						position: absolute;
+						left: 0;
+						top: 0;
+						bottom: 0;
+						right: 0;
+						padding: 10px;
+						margin: auto;
+						width: 150px;
+						height: 40px;
+						text-align: center;
+					}
+				}
+				.showFlight{
+					h2{
+						font-size: 24px;
+						margin-bottom: 10px;
+					}
+					p{
+						font-size: 18px;
+						margin-top: 5px;
+					}
+					.flightNumber{
+						font-size: 14px;
+					}
+					/* .oneWay{
+						margin-right: 100px;
+					} */
+				}
+			}
+			.flightInfo:hover{
+				border: 1px solid $active; 
+				.hoverState{
+					display: block;
+				}
+			}
+			.noResult{
+				padding: 20px;
+				.info{
+					font-weight: normal;					
+				}
+				li{
+					margin-bottom: 10px;
+				}
+			}
+		}
+	}
+}
