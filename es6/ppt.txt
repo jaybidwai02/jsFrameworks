@@ -1,0 +1,29 @@
+ES6 statnds for ECMA script 6
+es6 is 100% backword compatible to es5
+
+es6 introduces 
+1.Better syntax for features that already exist
+2.New functionality
+3.Completely new features
+
+
+let and Const
+1.in es5 variables are in function scope there is no built in concept of block scope in es5 and there is noway to decleare const in es5
+to overcome this es6 introduces let and const keywords
+
+var hoisting - 
+	as soon as variable scope statrt variable are assigned to undefined in es5 thats how var achive hoisting in es5
+
+	but let and const does not support hoisting, this not disadvantage it is introduce to achive best coding practice
+
+	Modules-
+	1.each module contain pice of code that executes only once when it's loaded ie. module are sigelton
+	2.module may contain variable decleration, by default declearation are local to module 
+	3. if you want to decleare decleration in module golbal you have to export it so that other module can use it
+
+	why?
+	goals
+	1.Default exports are favored
+	2.Static module structure
+	3.Support for both synchronous and asynchronous loading
+	4.Support for cyclic dependencies between modules
