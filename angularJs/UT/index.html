@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body ng-app="MyApp">
+
+	<div ng-controller="AppController">
+		<h1>{{obj.val}}</h1>
+
+		<p show-msg msg="This Is message" passed-fun="inc()">Click Me</p>
+	</div>
+	
+	<script src="app/dist/js/lib.js" type="text/javascript"></script>
+	<script src="app/dist/js/app.js" type="text/javascript"></script>
+</body>
+</html>
