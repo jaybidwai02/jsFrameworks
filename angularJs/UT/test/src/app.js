@@ -4,7 +4,7 @@
 		controller;
 
 	beforeEach(function() {
-		module('MyApp');
+		module('MyApp','templates');
 
 		inject(function($injector){
 			$rootScope = $injector.get('$rootScope');
@@ -12,14 +12,14 @@
 			controller = $injector.get('$controller')("AppController", {$scope:$scope});
 		});
 		//$scope.inc();
-		var a = $scope.chk();
-		a();
+		/*var a = $scope.chk();
+		a();*/
 	});
 
 	
 
-
 describe('AppController', function() {
+
 
 	describe('Initialzation', function() {
 		it('It should be 10', function() {

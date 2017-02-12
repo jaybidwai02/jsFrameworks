@@ -14,13 +14,14 @@ app.controller('AppController',['$scope',function($scope){
 		return true;
 	}
 
-	$scope.chk = function(){
+	/*$scope.chk = function(){
 		return function(){
 			var a;
 			var b;
 			return 10+20
 		}
-	}
+	}*/
+	
 }]);
 
 
@@ -48,5 +49,15 @@ app.directive('showMsg', ['callFun',function (callFun) {
 app.service('callFun',function(){
 	this.callMe = function(){
 		console.log('called me');
+	}
+});
+app.directive('custDir',function(){
+	return {
+		restrict:'A',
+		scope: {
+			myText:'@',
+		},
+		// template:'<p class="pTag">Anup</p>'
+		templateUrl:'app/src/js/directives/tpl.html'
 	}
 });

@@ -16,8 +16,10 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       'bower_components/angular/angular.js',
-      /*'bower_components/angular-mocks/angular-mocks.js',
-      'bower_components/angular-resource/angular-resource.js',*/
+      'bower_components/angular-mocks/angular-mocks.js',
+      'bower_components/angular-resource/angular-resource.js',
+      'bower_components/jquery/dist/jquery.js',
+      'app/src/**/*.html',
       'app/**/*.js',
       'test/**/*.js'
     ],
@@ -31,7 +33,12 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-        'app/src/js/**/*.js': ['coverage']
+       // 'app/src/js/**/*.js': ['coverage'],
+        'app/**/*.html':['ng-html2js']
+    },
+
+    ngHtml2JsPreprocessor:{
+        moduleName: 'templates'
     },
 
     coverageReporter: {

@@ -4,9 +4,9 @@ module.exports = function(grunt) {
     concat: {
             "lib": {
                 "src": [
-                'bower_components/angular/angular.js',
-                'bower_components/angular-mocks/angular-mocks.js',
-                'bower_components/angular-resource/angular-resource.js'
+                'bower_components/angular/angular.js'
+                //'bower_components/angular-mocks/angular-mocks.js',
+                //'bower_components/angular-resource/angular-resource.js'
                 ],
                 "dest": "app/dist/js/lib.js"
             },

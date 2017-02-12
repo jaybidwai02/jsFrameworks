@@ -14,12 +14,13 @@ app.controller('AppController',['$scope',function($scope){
 		return true;
 	}
 
-	$scope.chk = function(){
+	/*$scope.chk = function(){
 		return function(){
 			var a;
 			var b;
 			return 10+20
 		}
-	}
+	}*/
+	
 }]);
 
