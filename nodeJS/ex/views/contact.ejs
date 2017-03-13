@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+		<h1>Contact</h1>
+		<p>Thanks for getting in touch</p>
+
+		<form method="POST" action="/contact">
+			<label for="">Name of person you want to contact</label>
+			<input type="text" name="who" value="<%= qs.name %>">
+			<label for="">Department in which you want to get in touch</label>
+			<input type="text" name="dept" value="<%= qs.dept %>">
+			<label for="">Your email Id</label>
+			<input type="text" name="email">
+			<input type="submit" value="Submit">
+		</form>
+</body>
+</html>

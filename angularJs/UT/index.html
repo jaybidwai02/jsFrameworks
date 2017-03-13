@@ -6,12 +6,17 @@
 </head>
 <body ng-app="MyApp">
 
-	<div ng-controller="AppController">
-		<h1>{{obj.val}}</h1>
+	<div ng-controller="FilterController">
+	<input type="text" name="" value="" placeholder="" ng-model="viewModal.name">
+	<p>{{viewModal.name}}</p>
+	<p>{{chk1.name}} asf</p>
+		<p>{{viewModal.name | uppercase}}</p>
+		<p>{{ viewModal.age | number:2 | currency}}</p>
+		<p>{{ viewModal.dob |date:'EEE MMM, yyyy'}}</p>
 
-		<p show-msg msg="This Is message" passed-fun="inc()">Click Me</p>
-
-		<div cust-dir my-text="{{obj.val}}"></div>
+		<ul>
+			<li ng-repeat="per in arr | filter:{$:'a'} | orderBy:'dob':sortResult ">{{per.name}} - {{per.age}}</li>
+		</ul>
 	</div>
 	
 	<script src="app/dist/js/lib.js" type="text/javascript"></script>
