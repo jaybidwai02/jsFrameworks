@@ -1,0 +1,15 @@
+Prop Validation
+
+When creating components, remember that they can be composed into bigger components and reused
+(in the same project, in other projects, by other developers). Therefore, it is a good practice to make explicit
+in your components which props can be used, which ones are required, and which types of values they
+accept. This can be done by declaring propTypes. propTypes help document your components, which
+benefits future development in two ways.
+1. You can easily open up a component and check which props are required and
+what type they should be.
+2. When things get messed up, React will give you an error message in the console, saying
+which props are wrong/missing and the render method that caused the problem.
+
+Default Prop Values
+You can also provide a default prop value in case none is provided. The syntax is similar: define a
+defaultProps object as a constructor property.

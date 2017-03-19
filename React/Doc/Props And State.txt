@@ -1,0 +1,14 @@
+• Props are a component’s configuration. They are received from above and
+immutable as far as the component receiving them is concerned.
+
+• State starts with a default value defined in the component’s constructor and then
+suffers from mutations in time (mostly generated from user events). A component
+manages its own state internally, and every time the state changes, the component is
+rendered again.
+
+container component
+
+worth noting that you should avoid adding data fetching logic to a component that already has other
+responsibilities. A good practice, instead, is to create a new stateful component whose single responsibility
+is communicating with the remote API, and passing data and callbacks down as props. Some people call this
+type of component a container component.

@@ -7,7 +7,9 @@ module.exports = {
         route:"./js/src/route.js",
         flux:"./js/src/flux.js",
         flux1:"./js/src/flux1.js",
-        redux:"./js/src/redux.js"
+        redux:"./js/src/redux.js",
+        test:["./js/src/test/test.js"],
+        search:["./js/src/search/search.js"]
     },
     module:{
     	loaders: [

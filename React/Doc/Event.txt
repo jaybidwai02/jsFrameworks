@@ -1,0 +1,60 @@
+Event
+1. React used event deligation for fast performance.
+2. React removes event when components are unmount.
+
+3.React uses JSX and in JSX events are in camel case ie. onClick insted of onclick of HTML.
+
+JSX
+
+<h1>Hello World</h1>
+TO
+React.createElement("h1", null, "Hello World");
+
+JSX vs. HTML
+
+1.Tag Attributes Are Camel Cased
+
+<input type="text" maxlength="30" />
+To
+<input type="text" maxLength="30" />
+
+2.All Elements Must be Balanced
+
+Tags such as <br> and <img>, which don’t have ending tags,
+need to be self-closed. So, instead of <br>, use <br/> and instead of <img src="...">, use <img src="..." />.
+
+3.Attribute Names are Based on the DOM API
+<div id="box" class="some-class"></div>
+
+if you want to manipulate the DOM and change its class name using plain JavaScript, you would do
+something like
+document.getElementById("box").className="some-other-class"
+
+As far as JavaScript is concerned, that attribute is called className, not class. Since JSX is just a syntax
+extension to JavaScript,
+
+return <div id="box" className="some-class"></div>
+
+Single Root Node
+React components can only render a single root node. To understand the reasons for this limitation, let’s
+look at this sample return from a render function:
+return(
+<h1>Hello World</h1>
+)
+It is transformed into a single statement:
+return React.createElement("h1", null, "Hello World");
+On the other hand, the following code isn’t valid:
+return (
+<h1>Hello World</h1>
+<h2>Have a nice day</h2>
+)
+
+To be clear, this is not a JSX limitation, but rather a JavaScript characteristic: a return statement
+can only return a single value,
+
+return (
+<div>
+<h1>Hello World</h1>
+<h2>Have a nice day</h2>
+</div>
+)
