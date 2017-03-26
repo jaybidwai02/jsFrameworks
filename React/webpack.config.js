@@ -10,7 +10,8 @@ module.exports = {
         redux:"./js/src/redux.js",
         test:["./js/src/test/test.js"],
         testFlux:["./js/src/test/flux.js"],
-        search:["./js/src/search/search.js"]
+        search:["./js/src/search/search.js"],
+        reduxTest:["./js/src/test/redux/redux.js"]
     },
     module:{
     	loaders: [
