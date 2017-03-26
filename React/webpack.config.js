@@ -9,6 +9,7 @@ module.exports = {
         flux1:"./js/src/flux1.js",
         redux:"./js/src/redux.js",
         test:["./js/src/test/test.js"],
+        testFlux:["./js/src/test/flux.js"],
         search:["./js/src/search/search.js"]
     },
     module:{
