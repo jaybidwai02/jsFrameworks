@@ -13,5 +13,12 @@ function addNumbers(a, b, c){
 }
 let numbers = [10,20,30];
 
+let obj1 = {
+	name:'jay'
+}
+
+let obj2 = {...obj1};
+console.log(obj2);
+
 console.log(addNumbers(numbers[0], numbers[1], numbers[2]))
 //console.log(addNumbers(...numbers));
