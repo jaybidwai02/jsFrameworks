@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDom from 'react-dom';
 
-import ToDoApp from './component/ToDoApp';
+import { ToDoApp } from './src/js/component/ToDoApp';
 
 /*class App extends Component{
 	render(){
@@ -14,6 +14,4 @@ import ToDoApp from './component/ToDoApp';
 const root = document.getElementById('root');
 // console.log(root);
 
-
-
-ReactDom.render(<ToDoApp />, root);
+// ReactDom.render(<ToDoApp />, root);

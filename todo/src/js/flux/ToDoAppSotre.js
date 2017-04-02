@@ -5,15 +5,17 @@ class ToDoAppSotre extends EventEmitter{
 	constructor(){
 		super();
 
-		this.todo = [
-			{
-				task:'task1'
-			}
-		];
+		this.todo = [];
 	}
 
 	getTodo(){
 		return this.todo;
+	}
+
+	setTodo(data){
+		this.todo = data;
+
+		this.emit('storeChange');
 	}
 
 	updateToDo(payload){

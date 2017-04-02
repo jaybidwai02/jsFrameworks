@@ -8,7 +8,7 @@ import { ToDoTaskList } from './ToDoTaskList';
 
 import * as todoActions from '../flux/Actions/todoActions';
 
-export class ToDoApp extends Component{
+class ToDoApp extends Component{
 	constructor(){
 		super();
 		this.addTask = this.addTask.bind(this);
@@ -23,11 +23,12 @@ export class ToDoApp extends Component{
 			id: Date.now(),
 			task
 		}
-		//console.log(task);
+		console.log(task);
 		todoActions.addTask(newTask);
 	}
 
 	componentDidMount() {
+		todoStore.setTodo(appData);
 		todoStore.on('storeChange', ()=>{
 			this.setState({
 				todo: todoStore.getTodo()
@@ -46,3 +47,5 @@ export class ToDoApp extends Component{
 		)
 	}
 }
+
+export default ToDoApp;
