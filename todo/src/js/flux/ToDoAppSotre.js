@@ -14,7 +14,7 @@ class ToDoAppSotre extends EventEmitter{
 
 	setTodo(data){
 		this.todo = data;
-
+		console.log('in store ', data);
 		this.emit('storeChange');
 	}
 

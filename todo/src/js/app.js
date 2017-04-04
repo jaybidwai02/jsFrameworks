@@ -16,4 +16,4 @@ const root = document.getElementById('root');
 
 
 
-ReactDom.render(<ToDoApp />, root);
+ReactDom.render(<ToDoApp initialState={appData}/>, root);

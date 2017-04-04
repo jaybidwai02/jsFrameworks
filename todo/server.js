@@ -17,14 +17,14 @@ app.set('view engine', 'ejs');
 app.use('/dist', express.static(__dirname + '/dist'));
 
 const ToDoAppFactory = React.createFactory(ToDoApp);
-console.log(ToDoAppFactory);
-console.log(ToDoAppFactory());
+// console.log(ToDoAppFactory);
+// console.log(ToDoAppFactory());
 
 app.get('/', function(req, res){
 
 	var todo = [
 		{
-			task: 'create todo app'
+			task: 'create todo app again'
 		}
 	];
 
@@ -33,7 +33,9 @@ app.get('/', function(req, res){
 	//console.log(obj.render());
 
 	//need to pass initial state as parameter
-	var serverApp = ToDoAppFactory({});
+	var serverApp = ToDoAppFactory({
+		initialState:todo
+	});
 	 var html = ReactDOMServer.renderToString(serverApp);
 	 // console.log(html);
 	res.render('index', {html:html, data : todo});
