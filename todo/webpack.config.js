@@ -3,7 +3,7 @@ module.exports = {
     devtool:"inline-sourcemap",
     entry: {
         app: "./src/js/app.js",
-        server: './server.js'
+        // server: './server.js'
     },
     module:{
     	loaders: [
