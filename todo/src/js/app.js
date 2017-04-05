@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import ReactDom from 'react-dom';
 
-import ToDoApp from './component/ToDoApp';
+import { Route, Router, IndexRoute, hashHistory } from 'react-router';
+
+// import ToDoApp from './component/ToDoApp';
+// import Completed from './component/ToDoApp/completed';
+import routes from './route';
 
 /*class App extends Component{
 	render(){
@@ -15,5 +19,9 @@ const root = document.getElementById('root');
 // console.log(root);
 
 
-
-ReactDom.render(<ToDoApp initialState={appData}/>, root);
+// <ToDoApp />
+ReactDom.render(
+	<Router history={hashHistory}>
+		{routes}
+	</Router>
+	, root);

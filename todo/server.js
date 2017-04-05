@@ -21,10 +21,10 @@ const ToDoAppFactory = React.createFactory(ToDoApp);
 // console.log(ToDoAppFactory());
 
 app.get('/', function(req, res){
-
+	var task = 'create todo app again 1';
 	var todo = [
 		{
-			task: 'create todo app again'
+			task
 		}
 	];
 
@@ -50,7 +50,7 @@ app.get('/', function(req, res){
 
 
 
-app.listen(3000, function(){
+app.listen(3000, ()=>{
 
 console.log('Listining to 3000.....');
 });

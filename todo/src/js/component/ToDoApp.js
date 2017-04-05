@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { Link } from 'react-router';
+
 import todoStore from '../flux/ToDoAppSotre';
 
 
@@ -37,7 +39,7 @@ class ToDoApp extends Component{
 			})
 		});
 
-		todoStore.setTodo(this.props.initialState);
+		todoStore.setTodo(this.props.route.initialState);
 	}
 
 	componentDidMount() {
@@ -51,9 +53,13 @@ class ToDoApp extends Component{
 		const { todo } = this.state;
 
 		return(
-			<div className="toDoApp">
-					<UserForm addTask={this.addTask}/>
-					<ToDoTaskList todo={todo}/>
+			<div>
+				<div className="toDoApp">
+						<UserForm addTask={this.addTask}/>
+						<ToDoTaskList todo={todo}/>
+				</div>
+				<Link to='completed'>Completed</Link>
+				{this.props.children}
 			</div>
 		)
 	}
