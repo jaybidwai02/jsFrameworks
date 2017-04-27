@@ -12,7 +12,9 @@ module.exports = {
         iterator: ["babel-polyfill","./js/src/iterator.js"],
         generator: ["babel-polyfill","./js/src/generator.js"],
         generatorAsynch: ["babel-polyfill","./js/src/generatorAsynch.js"],
-        spread: "./js/src/spread.js"
+        spread: "./js/src/spread.js",
+        sw:"./SW/sw.js",
+        swApp:"./SW/sw-app.js"
     },
     module:{
     	loaders: [

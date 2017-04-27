@@ -1,7 +1,8 @@
 
 	var $rootScope,
 		$scope,
-		controller;
+		controller,
+		AppService;
 
 	beforeEach(function() {
 		module('MyApp');
@@ -10,10 +11,14 @@
 			$rootScope = $injector.get('$rootScope');
 			$scope = $rootScope.$new();
 			controller = $injector.get('$controller')("AppController", {$scope:$scope});
+			AppService = $injector.get('AppService');
 		});
 		//$scope.inc();
 		/*var a = $scope.chk();
 		a();*/
+
+		spyOn(AppService, 'getData');
+		spyOn(AppService, 'setData').and.returnValue('200');
 	});
 
 	
@@ -43,6 +48,30 @@ describe('AppController', function() {
 			
 		});
 
+	});
+
+	describe('Testing service call', function() {
+		it('Should have fetched data from service', function() {
+			AppService.getData.and.callThrough();
+			$scope.setVal();
+			expect($scope.val.data).toEqual(1000);
+		});
+
+		it('setData of AppService should have been called', function() {
+			//$scope.setInfo(3000);
+			AppService.setData.and.callThrough();
+			var val = $scope.setInfo();
+
+			expect(AppService.setData).toHaveBeenCalled();
+			/*console.log(val);
+			expect(val).toEqual(3000);*/
+			// expect(AppService.data).toEqual(1000);
+		});
+
+		it('setData called with 100', function() {
+			$scope.setInfo(100)
+			expect(AppService.setData).toHaveBeenCalledWith(100);
+		});
 	});
 
 });
