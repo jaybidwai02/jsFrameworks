@@ -1,0 +1,195 @@
+/* html,body{
+	height: 100%; 
+} */
+@font-face {
+  font-family: montserrat;
+  font-style: normal;
+  font-weight: 400;
+  src: url(../font/montserrat-bold-webfont.woff); }
+
+@font-face {
+  font-family: montserrat;
+  font-style: normal;
+  font-weight: 300;
+  src: url(../font/montserrat-light-webfont2) format("woff2"), url(../font/montserrat-light-webfont) format("woff"); }
+
+@font-face {
+  font-family: montserrat;
+  font-style: normal;
+  font-weight: 400;
+  src: url(../font/montserrat-regular-webfont.woff2) format("woff2"), url(../font/montserrat-regular-webfont.woff) format("woff"); }
+
+@font-face {
+  font-family: montserrat;
+  font-style: normal;
+  font-weight: 500;
+  src: url(../font/montserrat-bold-webfont.woff2) format("woff2"), url(../font/montserrat-bold-webfont.woff) format("woff"); }
+
+body {
+  font-family: montserrat; }
+
+.fl {
+  float: left; }
+
+.fr {
+  float: right; }
+
+.clear:before, .clear:after, ul:before, ul:after {
+  clear: both;
+  content: " ";
+  display: table; }
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+li {
+  list-style: none; }
+
+a {
+  text-decoration: none; }
+
+.btn.green {
+  padding: 13px 14px 12px 15px;
+  color: #FFF;
+  font-size: 14px;
+  letter-spacing: 1.3px;
+  border-radius: 2px;
+  background-color: #63bfb4; }
+
+.btn.blueBtn {
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  color: #FFF;
+  padding: 27px 0 24px;
+  text-align: left;
+  background-color: #46529D;
+  width: 100%;
+  text-align: center;
+  outline: none;
+  border: none; }
+
+.employeeApp {
+  width: 100%; }
+  .employeeApp .employeeHeader {
+    width: 100%;
+    background: #46529D;
+    padding: 8px 29px 9px 29px; }
+    .employeeApp .employeeHeader .rightSec {
+      margin-top: 5px; }
+      .employeeApp .employeeHeader .rightSec .notification {
+        margin-right: 24px; }
+  .employeeApp .content {
+    width: 100%;
+    position: relative; }
+    .employeeApp .content .contentHeading {
+      width: 100%;
+      padding: 20px 31px 26px 30px;
+      border-bottom: 2px solid #ebebec; }
+      .employeeApp .content .contentHeading .heading {
+        font-size: 23px;
+        color: #2a2e44;
+        margin-top: 8px; }
+        .employeeApp .content .contentHeading .heading .numberOfRecord {
+          font-size: 23px;
+          color: #64BFB3; }
+    .employeeApp .content .employeeForm {
+      width: 370px;
+      background-color: #ffffff;
+      box-shadow: -3px 0 8px 0 rgba(0, 0, 0, 0.07);
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 100; }
+      .employeeApp .content .employeeForm .closeContainer {
+        width: 100%;
+        height: 30px;
+        padding: 8px  20px 8px 34px;
+        background-color: #f9f9f9; }
+        .employeeApp .content .employeeForm .closeContainer .close {
+          width: 12px;
+          height: 13px;
+          cursor: pointer; }
+      .employeeApp .content .employeeForm .formControl {
+        width: 100%;
+        border-bottom: 1px solid #ebebec;
+        padding: 10px 19px 23px; }
+        .employeeApp .content .employeeForm .formControl label {
+          font-size: 14px;
+          font-weight: bold;
+          color: #c6c8d7;
+          line-height: 18px;
+          margin-bottom: 15px;
+          display: inline-block; }
+        .employeeApp .content .employeeForm .formControl.focus label {
+          color: #8289B0; }
+        .employeeApp .content .employeeForm .formControl .inpEle {
+          font-size: 32px;
+          color: #2A2D44;
+          line-height: 39px;
+          border: none;
+          outline: none;
+          width: 100%; }
+    .employeeApp .content .employeeRecord {
+      width: 100%;
+      height: 665px;
+      background-color: #f9f9f9;
+      position: relative; }
+      .employeeApp .content .employeeRecord .msg {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        font-size: 14px;
+        color: #c6c8d7;
+        height: 18px;
+        text-align: center; }
+      .employeeApp .content .employeeRecord ul li {
+        padding: 20px  30px 21px;
+        border-bottom: 1px solid #ebebec;
+        position: relative; }
+        .employeeApp .content .employeeRecord ul li .edit {
+          display: none;
+          position: absolute;
+          top: 12px;
+          right: 30px;
+          padding: 11px;
+          font-size: 11px;
+          font-weight: bold;
+          color: #2A2D44;
+          background-color: #ebebec;
+          letter-spacing: 1px; }
+        .employeeApp .content .employeeRecord ul li span {
+          font-size: 16px;
+          color: #2A2D44;
+          display: inline-block; }
+        .employeeApp .content .employeeRecord ul li .srno {
+          width: 91px; }
+        .employeeApp .content .employeeRecord ul li .empName {
+          width: 226px; }
+        .employeeApp .content .employeeRecord ul li .empEmail {
+          width: 304px;
+          color: #5C6AC0; }
+        .employeeApp .content .employeeRecord ul li .taxIncome {
+          width: 266px; }
+        .employeeApp .content .employeeRecord ul li .taxPayable {
+          width: 363px; }
+        .employeeApp .content .employeeRecord ul li.heder {
+          background-color: #f9f9f9;
+          padding: 12px  30px 11px; }
+          .employeeApp .content .employeeRecord ul li.heder span {
+            font-size: 14px;
+            color: #c6c8d7;
+            font-weight: bold; }
+      .employeeApp .content .employeeRecord ul li:hover {
+        background-color: #e1fdfa; }
+        .employeeApp .content .employeeRecord ul li:hover .edit {
+          display: inline-block; }
+      .employeeApp .content .employeeRecord ul li.heder:hover {
+        background-color: #f9f9f9; }
