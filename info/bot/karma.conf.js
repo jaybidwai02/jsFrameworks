@@ -1,5 +1,5 @@
 // Karma configuration
-// Generated on Sat Feb 11 2017 14:37:53 GMT+0530 (India Standard Time)
+// Generated on Thu Apr 06 2017 12:18:46 GMT+0530 (India Standard Time)
 
 module.exports = function(config) {
   config.set({
@@ -10,18 +10,30 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine'],
+    frameworks: ['jasmine-ajax','jasmine'],
+    //plugins: ['karma-jasmine-ajax'],
 
 
     // list of files / patterns to load in the browser
     files: [
-      'bower_components/angular/angular.js',
-      'bower_components/angular-mocks/angular-mocks.js',
-      'bower_components/angular-resource/angular-resource.js',
-      'bower_components/jquery/dist/jquery.js',
-      'app/src/**/*.html',
-      'app/src/**/*.js',
-      'test/src/app.js'
+        // 'bower_components/angular/angular.js',
+        // 'bower_components/angular-mocks/angular-mocks.js',
+        // 'bower_components/angular-resource/angular-resource.js',
+        'bower_components/jquery/dist/jquery.js',
+        // 'bower_components/jquery/dist/mock-ajax.js',
+        // 'test/dependencies.js',
+        //'src/jass/validation/submitService.js',
+        //'src/jass/**/*.js',
+        // 'src/j/libs_v1.js',
+        //'src/j/app_v1.js',
+        // 'src/j/plugin_v1.js',
+        // "src/app/app.module.js",
+        // 'src/app/shared/services/onWindowCloseService.js',
+        // 'src/app/**/*.html',
+       // 'src/app/**/*.js',
+       'src/j/botDetect_v1.js',
+       'src/jass/botDetect_v1.js',       
+        'test/**/*.js'
     ],
 
 
@@ -33,13 +45,14 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-       'app/src/js/**/*.js': ['coverage'],
-        'app/**/*.html':['ng-html2js']
+        'src/jass/botDetect_v1.js': ['coverage'],
+        
     },
 
     ngHtml2JsPreprocessor:{
         moduleName: 'templates'
     },
+
 
     coverageReporter: {
       type : 'html',

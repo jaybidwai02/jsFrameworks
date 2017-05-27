@@ -1,4 +1,4 @@
-// var app = angular.module('MyApp',[]);
+var app = angular.module('MyApp',[]);
 
 app.controller('AppController',['$scope','AppService',function($scope, AppService){
 	$scope.count = 10;

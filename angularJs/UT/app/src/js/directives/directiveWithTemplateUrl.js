@@ -4,7 +4,7 @@ app.directive('custDir',function(){
 		scope: {
 			myText:'@',
 		},
-		// template:'<p class="pTag">Anup</p>'
-		templateUrl:'app/src/js/directives/tpl.html'
+		template:'<p class="pTag">Anup</p>'
+		// templateUrl:'app/src/js/directives/tpl.html'
 	}
 });

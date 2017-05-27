@@ -5,7 +5,7 @@
 		AppService;
 
 	beforeEach(function() {
-		module('MyApp','templates');
+		module('MyApp');
 
 		inject(function($injector){
 			$rootScope = $injector.get('$rootScope');
