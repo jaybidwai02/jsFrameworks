@@ -1,0 +1,169 @@
+
+
+.employeeApp{
+	width: 100%;
+	.employeeHeader{
+		width: 100%;
+		background: #46529D;
+		padding: 8px 29px 9px 29px;
+		.logo{
+			//background-image: url("../images/logo.png"); 
+		}
+		.rightSec{
+			margin-top: 5px;
+			.notification{
+				margin-right: 24px;
+			} 
+		}
+	}
+	.content{
+		width: 100%;
+		position: relative;
+		.contentHeading{
+			width: 100%;
+				padding: 20px 31px 26px 30px;
+				border-bottom: 2px solid $bor; 
+			.heading{
+				font-size: 23px;
+				color: $heading; 
+				margin-top: 8px;
+				.numberOfRecord{
+					font-size: 23px;
+					color: #64BFB3; 
+				}
+			}
+			
+		}
+		.employeeForm{
+			width: 370px;
+			//height: 754px;
+			background-color: #ffffff;
+			box-shadow: -3px 0 8px 0 rgba(0, 0, 0, 0.07);
+			position: absolute;
+			top: 0;
+			right: 0;
+			
+			z-index: 100;
+			.closeContainer{
+				width: 100%;
+				height: 30px;
+				padding: 8px  20px 8px 34px;
+				background-color: $bgCol;
+				.close{
+					width: 12px;
+					height: 13px;
+					cursor: pointer;
+				}
+			} 
+			
+			.formControl{
+				width: 100%;
+				border-bottom: 1px solid $bor;
+				padding: 10px 19px 23px;
+				label{
+					font-size: 14px;
+					font-weight: bold;
+					color: $txt;
+					line-height: 18px; 
+					margin-bottom: 15px;
+					//margin-top: 10px;
+					display: inline-block;
+				}
+				&.focus{
+					label{
+						color: #8289B0; 
+					}
+				}
+				.inpEle{
+					font-size: 32px;
+					color: $input;
+					line-height: 39px;
+					border: none;
+					outline: none;
+					width: 100%;
+				}
+			}
+		}
+		.employeeRecord{
+			width: 100%;
+			height: 665px;
+			background-color: #f9f9f9;
+			position: relative;
+			.msg{
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				margin: auto;
+				font-size: 14px;
+				color: $txt; 
+				height: 18px;
+				text-align: center;
+			}
+			ul{
+				//padding: 0 30px;
+				li{
+					padding: 20px  30px 21px;
+					border-bottom: 1px solid $bor;
+					position: relative;
+					.edit{
+						display: none;
+						position: absolute;
+						top: 12px;
+						right: 30px;
+						padding: 11px;
+						font-size: 11px;
+						font-weight: bold;
+						color: $input; 
+						background-color: $bor; 
+						letter-spacing: 1px;						
+					}
+					
+					span{
+						font-size: 16px;
+						color: $input; 
+						display: inline-block;
+						
+					}
+					.srno{
+						width: 91px;
+					}
+					.empName{
+						width: 226px
+					}
+					.empEmail{
+						width: 304px;
+						color: #5C6AC0; 
+					}
+					.taxIncome{
+						width: 266px;
+					}
+					.taxPayable{
+						width: 363px;
+					}
+				&.heder{
+					background-color: $bgCol; 
+					padding: 12px  30px 11px;
+					span{
+						font-size: 14px;
+						color: $txt; 
+						font-weight: bold;
+					}
+				}
+
+				}
+				li:hover{
+					.edit{
+						display: inline-block;
+					}
+					background-color: #e1fdfa;
+				}
+				li.heder:hover{
+					background-color: $bgCol; 
+				}
+			}
+			
+		}
+	}
+}

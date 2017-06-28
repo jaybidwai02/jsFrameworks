@@ -1,0 +1,87 @@
+$heading:#2a2e44;
+$txt:#c6c8d7;
+$input:#2A2D44;
+$bor:#ebebec;
+$gBtn: #63bfb4;
+$blueBtn: #46529D;
+$bgCol: #f9f9f9;
+
+/* html,body{
+	height: 100%; 
+} */
+
+@font-face {
+    font-family: montserrat;
+    font-style: normal;
+    font-weight: 400;
+    src: url(../font/montserrat-bold-webfont.woff)
+}
+@font-face {
+    font-family: montserrat;
+    font-style: normal;
+    font-weight: 300;
+    src: url(../font/montserrat-light-webfont2) format("woff2"), url(../font/montserrat-light-webfont) format("woff")
+}
+@font-face {
+    font-family: montserrat;
+    font-style: normal;
+    font-weight: 400;
+    src: url(../font/montserrat-regular-webfont.woff2) format("woff2"), url(../font/montserrat-regular-webfont.woff) format("woff")
+}
+@font-face {
+    font-family: montserrat;
+    font-style: normal;
+    font-weight: 500;
+    src: url(../font/montserrat-bold-webfont.woff2) format("woff2"), url(../font/montserrat-bold-webfont.woff) format("woff")
+}
+body{
+	font-family: montserrat; 
+}
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.clear:before,.clear:after,ul:before,ul:after
+{
+	clear: both;
+	content: " ";
+	display: table; 
+}
+*{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	//font-family: sans-serif;
+}
+li{
+	list-style: none;	
+}
+a{
+	text-decoration: none;
+}
+
+.btn.green{
+	padding: 13px 14px 12px 15px;
+	color: #FFF;
+	font-size: 14px;
+	letter-spacing: 1.3px;
+	border-radius: 2px;
+	background-color: $gBtn;
+}
+.btn.blueBtn{
+	font-size: 16px;
+	font-weight: bold;
+	letter-spacing: 1.5px;
+	color: #FFF;
+	padding: 27px 0 24px;
+	text-align: left;
+	background-color: $blueBtn;  
+	width: 100%;
+	text-align: center;
+	outline: none;
+	border: none;
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="app/dist/css/app.css">
+</head>
+<body ng-app="EmployeeSheet" class="employeeApp">
+	<header id="header" class="employeeHeader clear">
+		<!-- <a href="javascript:void(0);" class="logo"></a> -->
+		<img src="app/dist/images/logo.png" class="logo fl">
+
+		<div class="rightSec fr">
+			<img src="app/dist/images/notification.png" class="notification fl">
+
+			<img src="app/dist/images/settings.png" class="settings fl">
+		</div>
+	</header><!-- /header -->
+
+	<div ng-controller="employeeController as emp" class="content">
+		<div class="contentHeading clear">
+			<h1 class="heading fl">Employees List <span class="numberOfRecord" ng-bind-template="({{emp.employeeList.length}})"></span> </h1>
+			<a href="javascript:void(0)" class="btn green fr" ng-click="emp.toggleForm()">ADD EMPLOYEE</a>
+		</div>
+
+		<div class="employeeForm" ng-show="emp.showForm">
+			<div class="closeContainer clear">
+				<img src="app/dist/images/close.png" class="close fr" ng-click="emp.toggleForm()">
+			</div>
+			<form action="javascript:void(0);" ng-submit="emp.addEmployee($event)">
+				<div class="formControl">
+					<label>FULL NAME</label>
+					<input focus-ele type="text" class="inpEle" name="name" ng-model="emp.employeeRecord.name" required>
+				</div>
+				<div class="formControl">
+					<label>EMAIL ID</label>
+					<input focus-ele type="email" class="inpEle" name="email" ng-model="emp.employeeRecord.email" required>
+				</div>
+				<div class="formControl">
+					<label>GROSS SALARY</label>
+					<input focus-ele type="number" class="inpEle" name="grossSalary" ng-model="emp.employeeRecord.grossSalary" required>
+				</div>
+				<div class="formControl">
+					<label>INVESTMENT</label>
+					<input focus-ele type="number" class="inpEle" name="investment" ng-model="emp.employeeRecord.investment" required ng-blur="emp.calculateTax()">
+				</div>
+				<div class="formControl">
+					<label>TAXABLE INCOME</label>
+					<input focus-ele type="number" class="inpEle" name="taxableIncome" ng-model="emp.employeeRecord.taxableIncome" required>
+				</div>
+				<div class="formControl">
+					<label>TAX PAYABLE</label>
+					<input focus-ele type="number" class="inpEle" name="taxPayable" ng-model="emp.employeeRecord.taxPayable" required>
+				</div>
+				
+					<input type="submit" name="addEmp" value="SUBMIT" class="btn blueBtn">
+				
+			</form>
+		</div>
+
+		<div class="employeeRecord">
+			<ul>
+				<li class="heder" ng-show="emp.employeeList.length">
+					<span class="srno">NO</span>
+					<span class="empName">EMPLOYEE NAME</span>
+					<span class="empEmail">EMAILD ID</span>
+					<span class="taxIncome">TAXABLE INCOME</span>
+					<span class="taxPayable">TAX PAYABLE</span>
+				</li>
+				<li ng-repeat="employee in emp.employeeList track by $index">
+					<span class="srno" ng-bind="$index+1"></span>
+					<span class="empName" ng-bind="employee.name"></span>
+					<span class="empEmail" ng-bind="employee.email"></span>
+					<span class="taxIncome" ng-bind-template="{{employee.taxableIncome}}  p.a"></span>
+					<span class="taxPayable" ng-bind-template="{{employee.taxPayable}}  p.a"></span>
+					<span ng-click="emp.editEmployee($index)" class="edit">EDIT</span>
+				</li>
+			</ul>
+			<p class="msg" ng-hide="emp.employeeList.length">NO EMPLOYEES ADDED YET</p>
+		</div>
+	</div>
+	
+	<script src="app/dist/js/lib.js" type="text/javascript"></script>
+	<script src="app/dist/js/app.js" type="text/javascript"></script>
+</body>
+</html>
