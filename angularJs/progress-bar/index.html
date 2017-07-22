@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Flight Search</title>
+	<link rel="stylesheet" href="dist/css/app.css">
+</head>
+<body ng-app="ProgressBar">
+
+ <section ng-controller="progressController as progress" class="container">
+	<section class="progressMeter">
+	<p>{{progress.data.config}}</p>
+ 		<div ng-repeat="bar in progress.data.config.bars track by $index">
+ 			<div class="bar">
+ 				<div id="progress-{{$index}}" ng-class="{outoflimit:(progress.data.progressPercent[$index] > progress.data.config.limit )}" class="progress"></div>
+ 				<span class="percentage">{{progress.data.progressPercent[$index]}}%</span>
+ 			</div>
+ 		</div>
+
+ 		<div class="controlles">
+ 			<select name="probar" ng-model="progress.data.barNumber" >
+ 				<option  ng-selected="{{progress.data.barNumber == $index}}" ng-repeat="bar in progress.data.config.bars track by $index" value={{$index}}>Progress-{{$index + 1}}</option>
+ 			</select>
+ 			<button ng-repeat="btn in progress.data.config.buttons track by $index" ng-click="progress.change(btn)">{{btn}}</button>
+ 		</div>
+ 	</section>
+ </section>
+
+
+	<script src="dist/js/lib.js"></script>
+	<script src="dist/js/app.js"></script>
+</body>
+</html>
