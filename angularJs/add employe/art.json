@@ -1,0 +1,50 @@
+[
+	{
+	"cover":{
+		"image":[
+			{
+			"default":"img/screenshot.gif",
+			"search_item_cover":"http:\/\/davidzwirner.icreondemoserver.com\/sites\/default\/files\/styles\/search_item_cover\/public\/Lascapigliata.jpg?itok=nA_bjFNk"
+			},
+			{
+			"default":"http:\/\/davidzwirner.icreondemoserver.com\/sites\/default\/files\/Lascapigliata.jpg",
+			"search_item_cover":"http:\/\/davidzwirner.icreondemoserver.com\/sites\/default\/files\/styles\/search_item_cover\/public\/Lascapigliata.jpg?itok=nA_bjFNk"
+			}
+		]
+	},
+	"specification":{
+		"year":"2015",
+		"price":" $0.00",
+	"materials":"40 x 60 inches (101.6 x 152.4 cm)",
+	"dimensions":"Inkjet print",
+	"availability":"available"
+	},
+	"titlenyear":"The Hamptons, From the East of Eden series, 2015",
+	"type":"paid",
+	"artist":["\u003Ca href=\u0022http:\/\/davidzwirner.icreondemoserver.com\/artists\/philip-lorca-dicorcia\u0022\u003EPhilip-Lorca diCorcia\u003C\/a\u003E"]
+	},
+	{
+	"cover":{
+		"image":[
+			{
+			"default":"img/img2.jpg",
+			"search_item_cover":"http:\/\/davidzwirner.icreondemoserver.com\/sites\/default\/files\/styles\/search_item_cover\/public\/Lascapigliata.jpg?itok=nA_bjFNk"
+			},
+			{
+			"default":"http:\/\/davidzwirner.icreondemoserver.com\/sites\/default\/files\/Lascapigliata.jpg",
+			"search_item_cover":"http:\/\/davidzwirner.icreondemoserver.com\/sites\/default\/files\/styles\/search_item_cover\/public\/Lascapigliata.jpg?itok=nA_bjFNk"
+			}
+		]
+	},
+	"specification":{
+		"year":"2015",
+		"price":" $0.00",
+	"materials":"40 x 60 inches (101.6 x 152.4 cm)",
+	"dimensions":"Inkjet printtttttttttt",
+	"availability":"availableeeeeeee"
+	},
+	"titlenyear":"The Hamptons, From the East of Eden series, 2015",
+	"type":"paid",
+	"artist":["\u003Ca href=\u0022http:\/\/davidzwirner.icreondemoserver.com\/artists\/philip-lorca-dicorcia\u0022\u003EPhilip-Lorca diCorcia\u003C\/a\u003E"]
+	}
+]

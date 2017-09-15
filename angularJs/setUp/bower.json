@@ -1,0 +1,21 @@
+{
+  "name": "landmark",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Jay"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/jaybidwai02/jsFrameworks",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "1.4"
+  }
+}

@@ -1,4 +1,36 @@
-
+.artWorkComponent{
+	width: 500px;
+	margin: 0 auto;
+	padding: 15px;
+	
+	.craousel{
+		margin-bottom: 15px;
+		ul{
+			width: 100%;
+			li{
+				width: 100%;
+				img{
+					width: 100%;
+					height: 100%;
+				}
+			}
+		}
+	}
+	
+	.artInfo{
+		.artInfoTxt{
+			float: left;
+		}
+		.control{
+			float: right;
+		}
+	}
+	.artInfo:after{
+		display: table;
+		clear: both;
+		content: " ";
+	}
+}
 
 .employeeApp{
 	width: 100%;

@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Flight Search</title>
-	<link rel="stylesheet" href="dist/css/app.css">
+	<meta http-equiv="X-UA-Compatible" content="IE=EDGE"/>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+	<title>Tech Mahindra Progress Bar</title>
+	<link rel="stylesheet" href="dist/css/app.min.css">
 </head>
 <body ng-app="ProgressBar">
 
  <section ng-controller="progressController as progress" class="container">
-	<section class="progressMeter">
+	<p>I am showing The End Points for your reference</p>
 	<p>{{progress.data.config}}</p>
+	<section class="progressMeter">
  		<div ng-repeat="bar in progress.data.config.bars track by $index">
  			<div class="bar">
  				<div id="progress-{{$index}}" ng-class="{outoflimit:(progress.data.progressPercent[$index] > progress.data.config.limit )}" class="progress"></div>
@@ -27,7 +30,6 @@
  </section>
 
 
-	<script src="dist/js/lib.js"></script>
-	<script src="dist/js/app.js"></script>
+	<script src="dist/js/app.min.js"></script>
 </body>
 </html>

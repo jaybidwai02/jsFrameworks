@@ -11,7 +11,9 @@ module.exports = {
         test:["./js/src/test/test.js"],
         testFlux:["./js/src/test/flux.js"],
         search:["./js/src/search/search.js"],
-        reduxTest:["./js/src/test/redux/redux.js"]
+        reduxTest:["./js/src/test/redux/redux.js"],
+        fluxAndredux_flux:["./js/src/FluxAndredux/Flux/flux.js"],
+        fluxAndredux_redux:["./js/src/FluxAndredux/Redux/redux.js"]
     },
     module:{
     	loaders: [
