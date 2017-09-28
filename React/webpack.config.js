@@ -13,7 +13,8 @@ module.exports = {
         search:["./js/src/search/search.js"],
         reduxTest:["./js/src/test/redux/redux.js"],
         fluxAndredux_flux:["./js/src/FluxAndredux/Flux/flux.js"],
-        fluxAndredux_redux:["./js/src/FluxAndredux/Redux/redux.js"]
+        fluxAndredux_redux:["./js/src/FluxAndredux/Redux/redux.js"],
+        todo:["./js/src/ToDo/todo.js"],
     },
     module:{
     	loaders: [

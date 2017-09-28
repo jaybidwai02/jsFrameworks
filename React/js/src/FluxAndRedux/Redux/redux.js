@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import ReactDom from 'react-dom';
+/*import React, { Component } from 'react';
+import ReactDom from 'react-dom';*/
 // import { Counter } from './component/counter.component'
 import store from './store/counter.store.js'
 
-// ReactDom.render( <Counter/>, document.getElementById('root'));
+// ReactDom.render( <Counter chk="abc"/>, document.getElementById('root'));
 
 
 
