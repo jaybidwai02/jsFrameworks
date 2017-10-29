@@ -18,6 +18,7 @@ const showFilteredTodo = (
 	}
 }
 const mapStateToProps = (state) => {
+	console.log(state)
 	return {
 		todos:showFilteredTodo(state.todo, state.visibilityFilter)
 	}
@@ -25,7 +26,11 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
 	return {
 		onTodoClick: (id) => 
-		dispatch(action.toggleTodo(id))
+		dispatch(action.toggleTodo(id)),
+		onEdit : (id) => {
+			return dispatch(action.editTodo(id))
+		}
+		
 	}
 }
 export const VisibleTodoList = connect(
