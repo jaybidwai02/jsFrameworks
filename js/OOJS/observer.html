@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+		function Subject(){
+			this.observers = [];
+
+			this.subscribe = function(observer){
+				this.observers.push(observer)
+			}
+
+			this.unsubscribe = function(observer){
+				var index = this.observers.indexOf(observer);
+				if( index > -1){
+					this.observers.splice(index, 1)
+				}
+			}
+
+			this.notify = function(para){
+				for(var i = 0; i < this.observers.length; i++){
+					this.observers[i].update(para)
+				}
+			}
+		}
+
+		function Observer(){
+			this.count = 10;
+			this.update = function(para){
+				this.count = para;
+				console.log('I am updated count with : '+ para)
+			}
+			this.getCount = function(){
+				console.log(this.count)
+			}
+		}
+
+		var observer1 = new Observer()
+		var observer2 = new Observer()
+
+		var subject = new Subject()
+		subject.subscribe(observer1)
+		subject.subscribe(observer2)
+
+		observer1.count = 100;
+		subject.notify(100)
+
+		observer2.getCount()
+
+	</script>
+</body>
+</html>

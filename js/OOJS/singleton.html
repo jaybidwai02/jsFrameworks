@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+		var SingleTon = (function(){
+			var instance;
+
+			function Init(){
+				this.count = 0;
+				this.setCount = function(val){
+					this.count = val
+				}
+				this.show = function(){
+					console.log(this.count)
+				}
+			}
+
+			return {
+				getInstance:function(){
+					/*if(!instance){
+						instance = new Init()
+					}*/
+					instance =  instance || new Init()
+					return instance
+				}
+			}
+		})();
+
+		var obj = SingleTon.getInstance();
+		obj.setCount(100)
+		obj.show()
+		var obj1 = SingleTon.getInstance();
+		// obj.setCount(100)
+		obj1.show()
+	</script>
+</body>
+</html>

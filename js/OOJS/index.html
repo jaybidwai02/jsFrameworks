@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+		function Parent(){
+			this.name = 'jay'
+			this.show = function(){
+				console.log(this.name)
+			}
+		}
+		Parent.prototype.print = function(){
+			console.log('this.name')
+		}
+
+		function Child(){
+			Parent.call(this)
+			this.name = "Bidwai"
+		}
+
+		Child.prototype = new Parent()
+		Child.prototype.print = function(){
+			console.log(this.name)
+		}
+
+		var obj = new Child()
+		obj.show()
+		obj.print()
+		// Parent.show()
+	</script>
+</body>
+</html>
