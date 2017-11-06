@@ -5,8 +5,7 @@ export const todo = (state, action) =>{
 	switch(action.type){
 		case 'ADD_TODO':
 			return {
-				id:action.id,
-				text:action.text,
+				...action,
 				completed:false
 			}
 		case 'TOGGLE_TODO':
@@ -15,6 +14,13 @@ export const todo = (state, action) =>{
 			return {
 				...state,
 				completed: !state.completed
+			}
+		case 'UPDATE_TODO':
+			if(state.id != action.id) return state
+
+			return {
+				...state,
+				...action
 			}
 		default:
 			return state;
@@ -25,12 +31,15 @@ export const todo = (state, action) =>{
 export const todos = (state = [], action) => {
 	switch(action.type){
 		case 'ADD_TODO':
+		console.log('add red')
 			return [
 				...state,
 				todo(undefined, action)
 			]
 		case 'TOGGLE_TODO':
 			return state.map((t) => todo(t, action) )
+		case 'UPDATE_TODO':
+			return state.map((t) =>  todo(t, action))
 		default:
 			return state
 	}
@@ -45,7 +54,21 @@ export const visibilityFilter = (state = 'SHOW_ALL', action) => {
 	}
 }
 
+export const edit = (state = null, action) => {
+	switch(action.type){
+		case 'EDIT_TODO':
+			return action.id
+		case 'ADD_TODO':
+			return null
+		case 'UPDATE_TODO':
+			return null
+		default:
+			return state
+	}
+}
+
 export const todoApp = combineReducers({
 	todo: todos,
-	visibilityFilter
+	visibilityFilter,
+	edit
 })

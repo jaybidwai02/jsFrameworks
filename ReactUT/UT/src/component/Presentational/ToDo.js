@@ -2,13 +2,17 @@ import React from 'react'
 
 export const ToDo = ({
 	onClick,
+	onEdit,
 	completed,
-	text
+	task,
+	priority
 }) => (
 	<li 
-		onClick={onClick}
+		
 		style={{textDecoration: completed ? 'line-through' : 'none'}}
-	>
-		{text}
+	>		
+		<a href="javascript:void(0)" onClick={onClick}>{task}</a>{' '}
+		<a href="javascript:void(0)" >{priority}</a>{' '}
+		<a href="javascript:void(0)" onClick={onEdit}>Edit</a>
 	</li>
 )
