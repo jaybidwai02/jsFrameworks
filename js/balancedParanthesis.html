@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		/*function isBalacedParanthesis(str){
+			var check = "{}()[]";
+			var stack = [];
+
+			if(!str) return true
+
+			var arr = str.split('');
+
+			for(var i = 0; i < arr.length; i++){
+				var index = check.indexOf(arr[i])
+				if(index > -1){
+					if(index % 2){
+						var pop = stack.pop();
+						console.log(arr[i])
+						console.log(pop)
+						if(arr[i] != pop) return false
+					}else{
+						stack.push(check[index + 1])
+					}
+				}
+			}
+
+			return !stack.length
+		}*/
+
+		function isBalacedParanthesis(str){
+			var check = "(){}[]";
+			var stack = [];
+
+			if(!str) return true
+
+			for(var i = 0; i < str.length; i++){
+				var index = check.indexOf(str[i])
+				if(index > -1){
+
+					if( index % 2 ){
+						if( str[i] != stack.pop() ) return false
+					}else{
+						stack.push(check[index + 1])
+					}
+
+				}
+			}
+
+			return !stack.length
+		}
+
+		console.log(isBalacedParanthesis('abc[10*(2/3){1*2}]'))
+		console.log(isBalacedParanthesis('abc[10*(2/3){1*2}'))
+		console.log(isBalacedParanthesis('abc('))
+	</script>
+</body>
+</html>

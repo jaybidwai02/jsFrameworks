@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+	function quickSort(arr, left, right){
+	   var len = arr.length, 
+	   pivot,
+	   partitionIndex;
+
+
+	  if(left < right){
+	    pivot = right;
+	    partitionIndex = partition(arr, pivot, left, right);
+	    // console.log(left)
+	    // console.log(right)
+	    var kth = 2;
+	    if( right = (arr.length-1+(kth-1) ))  {
+	    	console.log(arr[arr.length-1+(kth-1) ])
+	    	return
+	    }
+	    // console.log(arr[pivot])
+	   //sort left and right
+	   quickSort(arr, left, partitionIndex - 1);
+	   quickSort(arr, partitionIndex + 1, right);
+	  }
+	  return arr;
+	}
+
+	function partition(arr, pivot, left, right){
+	   var pivotValue = arr[pivot],
+	       partitionIndex = left;
+
+	   for(var i = left; i < right; i++){
+	    if(arr[i] < pivotValue){
+	      swap(arr, i, partitionIndex);
+	      partitionIndex++;
+	    }
+	  }
+	  swap(arr, right, partitionIndex);
+	  return partitionIndex;
+	}
+
+	function swap(arr, i, j){
+	   var temp = arr[i];
+	   arr[i] = arr[j];
+	   arr[j] = temp;
+	}
+	var a = [9,7,8,2,1];
+	var res = quickSort(a, 0, a.length -1);
+	console.log(res)
+
+	/*	function quickSort(arr, left, right){
+			var len = arr.length;
+
+			if(left < right){
+				var pivot = right;
+				var partition = partitionIndex(arr, pivot, left, right)
+
+				quickSort(arr,left,partition-1)
+				quickSort(arr,partition+1,right)
+
+			}
+		}
+
+		function partitionIndex(arr, pivot, left, right){
+			var pivotValue = arr[pivot],
+			partition = left;
+
+			for(var i = left; i < right; i++){
+				if(arr[i] < pivotValue){
+					swap(arr, i, partition)
+					partition++
+				}
+			}
+			swap(arr,right, partition)
+
+			return partitionIndex
+		}*/
+	</script>
+</body>
+</html>

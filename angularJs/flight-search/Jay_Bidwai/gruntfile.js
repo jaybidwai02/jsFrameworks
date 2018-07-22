@@ -3,7 +3,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     concat: {
             "lib": {
-                "src": ["app/src/js/lib/angular.js","app/src/js/lib/angular-route.js","app/src/js/lib/rzslider.js"],
+                "src": ["app/src/js/lib/angular.js","app/src/js/lib/angular-route.js"],
                 "dest": "app/dist/js/lib.js"
             },
             "app": {

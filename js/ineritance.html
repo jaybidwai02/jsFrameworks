@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+		function Parent(){
+			this.name = 'jay'
+		}
+		Parent.prototype.getName = function(){
+			console.log(this.name)
+		}
+
+		function Child(){
+			this.lname = 'bidwai'
+		}
+
+		Child.prototype = new Parent();
+		Child.prototype.constructor = Parent;
+		Child.prototype.getFName = function(){
+			console.log(this.name+' '+this.lname)
+		}
+
+
+
+		var obj = new Child();
+		obj.getName();
+		obj.getFName();
+
+		console.log(obj instanceof Child)
+		console.log(obj instanceof Parent)
+		console.log(obj instanceof Object)
+
+		const objj = {
+			fn:'jay'
+		}
+		objj.fn = 'bidwai';
+		console.log('const');
+		console.log(objj);
+
+		var obj1 = {
+			fn:'anup'
+		}
+
+		console.log(obj1)
+
+		var obj2 = Object.create(obj1);
+		console.log(obj2);
+
+		// var ob3 = Object.assign()
+	</script>
+</body>
+</html>

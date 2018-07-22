@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+		/*function mergeSort(arr){
+			var len = arr.length;
+
+			if(len < 2) return arr
+
+			var mid = Math.floor(len/2);
+			var left = arr.slice(0,mid)
+			var right = arr.slice(mid)
+
+			return merge( mergeSort(left), mergeSort(right) )
+		}
+
+		function merge(left, right){
+			var result = [],
+				leftLength = left.length,
+				rightLength = right.length,
+				l = 0, r = 0;
+
+			while(l < leftLength && r < rightLength){
+				if(left[l] < right[r]){
+					result.push(left[l++])
+				}else{
+					result.push(right[r++])
+				}
+			}
+
+			return result.concat(left.slice(l)).concat(right.slice(r))
+		}*/
+
+		function mergeSort(arr){
+			var len = arr.length
+
+			if(len < 2) return arr
+
+			var mid = Math.floor(len/2)
+			var left = arr.slice(0,mid)
+			var right = arr.slice(mid)
+
+			return merge(mergeSort(left),mergeSort(right))
+		}
+
+		function merge(left, right){
+			var result = [],
+			leftLength = left.length,
+			rightLength = right.length,
+			l = 0, r = 0;
+
+			while(l < leftLength && r < rightLength){
+				if(left[l] < right[r]){
+					result.push(left[l++])
+				}else{
+					result.push(right[r++])
+				}
+			}
+
+			return result.concat(left.slice(l)).concat(right.slice(r))
+		}
+/*
+		function binarySearch(arr, start, end, ele){
+			var len = arr.length;
+
+			if(start <= end){
+
+				var mid = start + Math.ceil( (end -1)/2 )
+				console.log(mid)
+
+				if(ele == arr[mid]) return mid
+
+				if(ele < arr[mid]) return binarySearch(arr, start, mid, ele)
+
+				if(ele > arr[mid]) return binarySearch(arr, mid+1, end, ele)
+
+			}else{
+				return -1;
+			}
+
+
+		}*/
+
+		function binarySearch(arr, start, end, ele){
+			var len = arr.length
+
+			var mid = start + Math.ceil( (end-1)/2 )
+
+			if(start > end) return -1
+
+			if(arr[mid] == ele) return mid
+
+			if(arr[mid] < ele) return binarySearch(arr, mid+1, end, ele)
+
+			if(arr[mid] > ele) return binarySearch(arr, start, mid, ele)
+		}
+
+		// var result = mergeSort([1,6,8,3,2,5,9,10])
+		// var result = mergeSort([3,4,2])
+		var result = mergeSort([2])
+		console.log(result)
+		var searchResult = binarySearch(result,0,result.length-1, 2)
+		console.log('element found at : '+ searchResult)
+		console.log(result[searchResult])
+	</script>
+</body>
+</html>

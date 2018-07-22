@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+	/*function Sum(x){
+		var result = x;
+		function init(y){
+			if(!!y) result = result + y;
+
+			return init
+		}	
+
+		init.toString = function(){
+			return result
+		}
+		init.valueOf = function(){
+			return result
+		}	
+
+		return init
+	}*/
+
+	function Sum(x){
+		var restult = x;
+		function init(y){
+			restult += y
+			return init
+		}
+
+		init.valueOf = function(){
+			return restult
+		}
+		
+		init.toString = function(){
+			return restult
+		}
+
+		return init
+	}
+
+	console.log(Sum(2)(3)(4))
+	var a = Sum(2)(3)(4) + 10;
+	console.log(a)
+	console.log(Sum(2))
+	alert(Sum(2)(3)(4))
+	</script>
+</body>
+</html>
+	

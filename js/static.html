@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+		function Shape(){
+			// Shape.count = ++Shape.count || 1;
+			var count = ++count ||1;
+			this.setCount = function(a){
+				//this.count = a;
+			}
+
+			this.showCount = function(){
+				console.log(count)
+			}
+		}
+
+		// Shape.prototype.count =  1;
+
+		var obj = new Shape()
+		// obj.count = 10;
+		var obj1 = new Shape()
+		// obj1.count = 20;
+		var obj2 = new Shape()
+		// obj2.count = 30;
+
+		obj.showCount()
+
+		console.log(undefined == undefined)
+		console.log(undefined === undefined)
+		console.log(undefined == null)
+		console.log(undefined === null)
+
+		console.log(null == null)
+		console.log(null === null)
+
+		console.log(NaN === NaN)
+		console.log(NaN == NaN)
+
+
+
+
+	</script>
+</body>
+</html>

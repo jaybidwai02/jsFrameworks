@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	 
+	 <script type="text/javascript">
+	 var Stack = (function(){
+	 	var stack = [];
+	 	function Stack(){
+
+	 		this.min = [];
+	 	}
+
+	 	Stack.prototype.push = function(ele){
+	 		stack.push(ele);
+
+	 		if(!this.min.length){
+	 			this.min.push(ele);
+	 		}else if(ele < this.min[this.min.length - 1]){
+	 			this.min.push(ele);
+	 		}else{
+	 			this.min.push(this.min[this.min.length - 1]);
+	 		}
+	 	}
+	 	Stack.prototype.pop = function(){
+	 		this.min.pop();
+	 		return stack.pop();
+	 	}
+	 	Stack.prototype.Min = function(){
+	 		return this.min[this.min.length - 1];
+	 	}
+
+	 	return Stack
+	})()
+
+	 	var obj = new Stack();
+	 	console.log(obj)
+	 	console.log(obj)
+	 	obj.push(10)
+	 	obj.push(20)
+	 	obj.push(30)
+	 	console.log(obj.Min())
+	 	obj.pop()
+	 	obj.push(5)
+	 	console.log(obj.stack)
+	 	console.log(obj.min)
+	 	console.log(obj.Min())
+
+	 </script>
+</body>
+</html>

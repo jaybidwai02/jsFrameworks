@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script type="text/javascript">
+	Object.prototype.class = function(){
+		return this.constructor.name;
+	}
+		var is_String = function(input){
+			console.log(input.class())
+			console.log(typeof input)
+			console.log(Object.prototype.toString.call(input))
+			return typeof input == 'string' ? true : false;
+		}
+
+		console.log( is_String('abc') );
+		console.log( is_String( new String('abc') ) );
+		console.log( is_String([1,2,3]) );
+		console.log( is_String(11) );
+
+		function reg(input){
+
+		}
+		var a = 'Jay Jay Bidwai';
+		console.log(a.replace(/jay/ig, 'Anup'))
+	</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+	// Abstrac class is a class which only provide structure
+	// We can not create instance of Abstract class
+	// Abstract class only been inheritaed 
+		function AbstractClass(){
+			throw new Error("Can't create instance of AbstractClass")
+		}
+
+		AbstractClass.prototype.print = function(){
+			console.log('from AbstractClass')
+		}
+
+		function Child(){
+			this.name = 'Child';
+		}
+
+		Child.prototype = Object.create(AbstractClass.prototype)
+
+		var obj = new Child()
+		console.log(obj.name)
+		obj.print()
+	</script>
+</body>
+</html>
