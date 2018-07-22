@@ -225,7 +225,7 @@ AddTodo = connect()(AddTodo)
 const Footer = () => (
 	<div>
 		show:{' '}
-		<FilterLink filter="SHOW_ALL" > All </FilterLink>
+		<FilterLink filter="SHOW_ALL" > Allllllllll </FilterLink>
 		<FilterLink filter="SHOW_ACTIVE" > Active </FilterLink>
 		<FilterLink filter="SHOW_COMPLETED" > Completed </FilterLink>
 	</div>

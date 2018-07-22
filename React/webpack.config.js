@@ -15,6 +15,7 @@ module.exports = {
         fluxAndredux_flux:["./js/src/FluxAndredux/Flux/flux.js"],
         fluxAndredux_redux:["./js/src/FluxAndredux/Redux/redux.js"],
         todo:["./js/src/ToDo/todo.js"],
+        reduxForm:["./js/src/reduxForm/reduxForm.js"],
     },
     module:{
     	loaders: [
