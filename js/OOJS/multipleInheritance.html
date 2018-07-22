@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function SuperClass(argument) {
+			this.a = 10
+		}
+		SuperClass.prototype.show = function(){
+			console.log('show'+this.a)
+		}
+
+		function SuperClass1(){
+			this.b = 20
+		}
+
+		/*function Child(){
+			SuperClass.call(this)
+			SuperClass1.call(this)
+		}
+		var obj = new Child()
+		console.log(obj.a)
+		
+		console.log(obj.b)
+
+		Child.prototype = Object.create(SuperClass.prototype)
+		Object.assign(Child.prototype,SuperClass1.prototype)
+		Child.prototype.constructor = Child
+		var obj = new Child()
+		console.log(obj.a)
+		obj.show()
+		console.log(obj.b)*/
+
+		function Child(){
+			this.c = 30
+		}
+		Child.prototype = new SuperClass()
+		var obj = new Child()
+		console.log(obj.c)
+		console.log(obj.a)
+		obj.show()
+	</script>
+</body>
+</html>
