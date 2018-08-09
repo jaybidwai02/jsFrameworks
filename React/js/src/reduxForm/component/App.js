@@ -38,7 +38,7 @@ const renderSelect = createRender( (input,label,{children}) =>
 
 let App = ({handleSubmit}) => (
 	<form onSubmit={handleSubmit(showRes)}>
-		<Field name="firstName" label="First Namee" component={renderInput} />
+		<Field name="firstName" label="First Name" component={renderInput} />
 		<Field name="lastName" label="Last Name" component={renderInput} />
 		<Field name="email" label="email" component={renderInput} />
 		<Field name="province" label="province" component={renderSelect}>
