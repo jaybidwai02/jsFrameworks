@@ -31,6 +31,7 @@ module.exports = {
     },
     output: {
         path: "./js/dist",
+        publicPath:"/js/dist/",
         filename: "[name].js"
     },
     devServer:{
