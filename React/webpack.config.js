@@ -16,6 +16,7 @@ module.exports = {
         fluxAndredux_redux:["./js/src/FluxAndredux/Redux/redux.js"],
         todo:["./js/src/ToDo/todo.js"],
         reduxForm:["./js/src/reduxForm/reduxForm.js"],
+        tictaktoe:["./js/src/tic-tac-toe/tictaktoe.js"],
     },
     module:{
     	loaders: [
@@ -26,7 +27,11 @@ module.exports = {
     			query:{
     				presets:['react','es2015']
     			}
-    		}
+    		},
+            {
+                    test: /\.css$/,
+                    loader:'style!css!'
+            }
     	]
     },
     output: {

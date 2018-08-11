@@ -1,0 +1,9 @@
+.board{	
+	width: 200px;
+	margin: 100px auto;
+}
+.row{
+	width: 100%;
+	margin-bottom: 5px;
+	overflow: hidden;
+}
