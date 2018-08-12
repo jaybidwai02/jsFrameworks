@@ -17,6 +17,7 @@ module.exports = {
         todo:["./js/src/ToDo/todo.js"],
         reduxForm:["./js/src/reduxForm/reduxForm.js"],
         tictaktoe:["./js/src/tic-tac-toe/tictaktoe.js"],
+        reduxPoc:["./js/src/Redux/reduxPoc.js"],
     },
     module:{
     	loaders: [
