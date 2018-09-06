@@ -29,7 +29,7 @@ class App extends Component{
 
 		var viewPortWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 		var viewPortHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-		let payload = {pageX,pageY,screenX,screenY,timeStamp,type,clientY,clientX,viewPortWidth,viewPortHeight}
+		let payload = {pageX,pageY,screenX,screenY,timeStamp,eventType:type,clientY,clientX,viewPortWidth,viewPortHeight}
 		this.storage.push(payload)
 		/*console.log(payload) 
 		console.log(this.storage) */
@@ -53,18 +53,19 @@ class App extends Component{
 		let appVersion = window.navigator.appVersion
 		let platform = window.navigator.platform
 		let vendor = window.navigator.vendor
-
+		let latitude = window.navigator.geolocation.latitude
+		let loadTime;
 		let payload = {
 			url,userAgent,appVersion,appName,appCodeName,platform,vendor
 		}
 
 		console.log(payload)
 
+
 		window.addEventListener('load',function(){
-			var loadTime = Date.now() - window.startTime
+			loadTime = Date.now() - window.startTime
 			console.log('loadTime')
 			console.log(loadTime/1000)
-
 		})
 
 		let allSections = document.querySelectorAll('section')
@@ -81,7 +82,7 @@ class App extends Component{
 				console.log(event)
 				var viewPortWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 				var viewPortHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-				let {pageX,pageY,screenX,screenY,timeStamp,type,clientX,clientY} = event
+				let {pageX,pageY,screenX,screenY,timeStamp,eventType:type,clientX,clientY} = event
 				timeSpent = Date.now() - timeSpent
 				let sectionName = event.target.id
 				// console.log(sectionName)
