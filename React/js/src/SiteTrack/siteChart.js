@@ -95,11 +95,13 @@ export default class SiteChart extends Component{
 		}];
 
 		return(
+			<section id="barChart" className="charts">
 			<BarChart
 			       data={data}
 			       width={400}
 			       height={400}
 			       margin={{top: 10, bottom: 50, left: 50, right: 10}}/>
+			</section>
 		)
 	}
 
@@ -113,7 +115,7 @@ export default class SiteChart extends Component{
 		};
 
 		return(
-			<div>
+			<section id="PieChart" className="charts">
 						<PieChart
 			                data={data}
 			                width={600}
@@ -121,7 +123,7 @@ export default class SiteChart extends Component{
 			                margin={{top: 10, bottom: 10, left: 100, right: 100}}
 			                sort={null}
 			              />
-			</div>
+			</section>
 			
 		)
 	}
@@ -165,12 +167,10 @@ export default class SiteChart extends Component{
 					{this.renderMulChart()}*/
 		return(
 			<div>
-
-					<h2>chart</h2>
-					<section id="barChart">{this.renderChart()}</section>
-					{this.renderPieChart()}
-					{this.renderMulChart()}
-					
+				<section id="chart">
+					{this.renderChart()}
+					{this.renderPieChart()}					
+				</section>				
 			</div>
 		)
 	}

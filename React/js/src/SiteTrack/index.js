@@ -2,8 +2,16 @@ import React, {Component} from 'react'
 import ReactDom from 'react-dom'
 import axios from 'axios'
 
+import $ from "jquery";
+import bowser from 'bowser'
+
+import { Button,ButtonToolbar } from 'react-bootstrap';
+
+
 
 import SiteChart from './siteChart'
+import BootCarousel from './carousel'
+import TextEntry from './TextEntry'
 
 class App extends Component{
 	constructor(props){
@@ -17,6 +25,7 @@ class App extends Component{
 	}
 	moveHandler(event){
 		let {pageX,pageY,screenX,screenY,timeStamp,type,clientX,clientY} = event
+		let parentSection = $(event.target).parents('section').attr('id')  ||  $(event.target).parents('section').attr('class')
 		/*console.log(event)
 		console.log(event.target)
 		console.log('event.pageX',event.pageX)
@@ -27,17 +36,30 @@ class App extends Component{
 		console.log('event.detail',event.detail)
 		console.log('event.type',event.type)*/
 
+
 		var viewPortWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 		var viewPortHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-		let payload = {pageX,pageY,screenX,screenY,timeStamp,eventType:type,clientY,clientX,viewPortWidth,viewPortHeight}
+		let domainName = window.location.hostname;
+		let url = window.location.href;
+		let payload = {pageX,pageY,screenX,screenY,timeStamp,eventType:type,clientY,clientX,viewPortWidth,viewPortHeight,domainName,url,parentSection}
 		this.storage.push(payload)
-		/*console.log(payload) 
-		console.log(this.storage) */
+		// console.log(payload) 
+
+		/*console.log(this.storage) */
 
 		this.startInterval()
 	}
 
 	componentDidMount(){
+		const browserPlugin = bowser.getParser(window.navigator.userAgent);
+		 
+		const browserInfo = browserPlugin.parse()
+		const {parsedResult} = browserInfo
+		console.log(browserInfo)
+		let {browser,os,platform} = parsedResult
+		let {name:browserName,version:browserVersion} = browser
+		let {name:osName,versionName:osVersion} = os
+		let {type:deviceType} = platform
 		/*console.log(window.location.href)
 		console.log(window.navigator)
 		console.log(window.navigator.userAgent)
@@ -51,45 +73,55 @@ class App extends Component{
 		let appName = window.navigator.appName
 		let appCodeName = window.navigator.appCodeName
 		let appVersion = window.navigator.appVersion
-		let platform = window.navigator.platform
+		// let platform = window.navigator.platform
 		let vendor = window.navigator.vendor
 		let latitude = window.navigator.geolocation.latitude
+		let domainName = window.location.hostname
 		let loadTime;
-		let payload = {
-			url,userAgent,appVersion,appName,appCodeName,platform,vendor
-		}
-
-		console.log(payload)
+		
 
 
 		window.addEventListener('load',function(){
 			loadTime = Date.now() - window.startTime
 			console.log('loadTime')
 			console.log(loadTime/1000)
+			loadTime = loadTime/1000
+
+			let payload = {
+				url,userAgent,appVersion,appName,appCodeName,platform,vendor,domainName,browserName,browserVersion,osName,osVersion,deviceType,loadTime
+			}
+
+			console.log(payload)
+
+			loadTime = 0;
 		})
+
+		// window.addEventListener('mousemove',this.moveHandler)
+		window.addEventListener('click',this.moveHandler)
 
 		let allSections = document.querySelectorAll('section')
 
 		allSections.forEach((item,index) => {
 			let timeSpent = 0;
-			console.log(item)
+			// console.log(item)
 			item.addEventListener('mouseenter',(event) => {
-				console.log(event)
+				// console.log(event)
 				timeSpent = Date.now()
 			})
 			item.addEventListener('mouseleave',(event) => {
 				this.startInterval()
-				console.log(event)
+				// console.log(event)
 				var viewPortWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 				var viewPortHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 				let {pageX,pageY,screenX,screenY,timeStamp,eventType:type,clientX,clientY} = event
 				timeSpent = Date.now() - timeSpent
 				let sectionName = event.target.id
+
 				// console.log(sectionName)
 				let payload = {pageX,pageY,screenX,screenY,timeStamp,type,clientY,clientX,timeSpent,sectionName,viewPortWidth,viewPortHeight}
 				this.storage.push(payload)
-				console.log('payload')
-				console.log(payload)
+				// console.log('payload')
+				// console.log(payload)
 			})
 		})
 
@@ -113,9 +145,40 @@ class App extends Component{
 	render(){
 		
 		return(
-			<div className="container" onMouseMove={(e) => this.moveHandler(e)} onClick={(e) => this.moveHandler(e)}>
-				<h2>Testt</h2>
+			<div className="container">
+				<h2>Demo</h2>
+
+				<BootCarousel />
+
+				<TextEntry />
+
 				<SiteChart />
+
+				<ButtonToolbar>
+				  {/* Standard button */}
+				  <Button>Default</Button>
+
+				  {/* Provides extra visual weight and identifies the primary action in a set of buttons */}
+				  <Button bsStyle="primary">Primary</Button>
+
+				  {/* Indicates a successful or positive action */}
+				  <Button bsStyle="success">Success</Button>
+
+				  {/* Contextual button for informational alert messages */}
+				  <Button bsStyle="info">Info</Button>
+
+				  {/* Indicates caution should be taken with this action */}
+				  <Button bsStyle="warning">Warning</Button>
+
+				  {/* Indicates a dangerous or potentially negative action */}
+				  <Button bsStyle="danger">Danger</Button>
+
+				  {/* Deemphasize a button by making it look like a link while maintaining button behavior */}
+				  <Button bsStyle="link">Link</Button>
+				</ButtonToolbar>;
+
+
+				
 			</div>
 		)
 	}
