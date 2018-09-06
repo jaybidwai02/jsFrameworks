@@ -1,10 +1,19 @@
 import React, {Component} from 'react'
 import ReactDom from 'react-dom'
+import axios from 'axios'
+
+
+import SiteChart from './siteChart'
 
 class App extends Component{
 	constructor(props){
 		super(props)
 		this.moveHandler = this.moveHandler.bind(this)
+		this.storage = []
+		this.interval = null
+		this.interval = null
+		this.startInterval = this.startInterval.bind(this)
+		this.stopInterval = this.stopInterval.bind(this)
 	}
 	moveHandler(event){
 		let {pageX,pageY,screenX,screenY,timeStamp,type,clientX,clientY} = event
@@ -19,7 +28,11 @@ class App extends Component{
 		console.log('event.type',event.type)*/
 
 		let payload = {pageX,pageY,screenX,screenY,timeStamp,type,clientY,clientX}
-		console.log(payload) 
+		this.storage.push(payload)
+		/*console.log(payload) 
+		console.log(this.storage) */
+
+		this.startInterval()
 	}
 
 	componentDidMount(){
@@ -49,15 +62,55 @@ class App extends Component{
 			var loadTime = Date.now() - window.startTime
 			console.log('loadTime')
 			console.log(loadTime/1000)
-			
+
 		})
+
+		let allSections = document.querySelectorAll('section')
+
+		allSections.forEach((item,index) => {
+			let timeSpent = 0;
+			console.log(item)
+			item.addEventListener('mouseenter',(event) => {
+				console.log(event)
+				timeSpent = Date.now()
+			})
+			item.addEventListener('mouseleave',(event) => {
+				this.startInterval()
+				console.log(event)
+				let {pageX,pageY,screenX,screenY,timeStamp,type,clientX,clientY} = event
+				timeSpent = Date.now() - timeSpent
+				let sectionName = event.target.id
+				// console.log(sectionName)
+				let payload = {pageX,pageY,screenX,screenY,timeStamp,type,clientY,clientX,timeSpent,sectionName}
+				this.storage.push(payload)
+				console.log('payload')
+				console.log(payload)
+			})
+		})
+
+		
+	}
+	stopInterval(){
+		clearInterval(this.interval)
+	}
+	startInterval(){
+		// console.log('in')
+		if(this.interval) return
+		// console.log('start')
+		this.interval = setInterval(()=>{
+			this.stopInterval()
+			this.interval = null
+			axios.post('submit',this.storage)
+			this.storage = []
+		},5000)
 	}
 
 	render(){
 		
 		return(
-			<div className="container" onMouseMove={(e) => this.moveHandler(e)}>
+			<div className="container" onMouseMove={(e) => this.moveHandler(e)} onClick={(e) => this.moveHandler(e)}>
 				<h2>Testt</h2>
+				<SiteChart />
 			</div>
 		)
 	}
