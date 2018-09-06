@@ -18,6 +18,7 @@ module.exports = {
         reduxForm:["./js/src/reduxForm/reduxForm.js"],
         tictaktoe:["./js/src/tic-tac-toe/tictaktoe.js"],
         reduxPoc:["./js/src/Redux/reduxPoc.js"],
+        siteTrack:["./js/src/SiteTrack/index.js"],
     },
     module:{
     	loaders: [
