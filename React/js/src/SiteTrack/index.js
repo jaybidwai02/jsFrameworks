@@ -44,6 +44,13 @@ class App extends Component{
 		}
 
 		console.log(payload)
+
+		window.addEventListener('load',function(){
+			var loadTime = Date.now() - window.startTime
+			console.log('loadTime')
+			console.log(loadTime/1000)
+			
+		})
 	}
 
 	render(){
