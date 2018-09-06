@@ -27,7 +27,9 @@ class App extends Component{
 		console.log('event.detail',event.detail)
 		console.log('event.type',event.type)*/
 
-		let payload = {pageX,pageY,screenX,screenY,timeStamp,type,clientY,clientX}
+		var viewPortWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+		var viewPortHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+		let payload = {pageX,pageY,screenX,screenY,timeStamp,type,clientY,clientX,viewPortWidth,viewPortHeight}
 		this.storage.push(payload)
 		/*console.log(payload) 
 		console.log(this.storage) */
@@ -77,11 +79,13 @@ class App extends Component{
 			item.addEventListener('mouseleave',(event) => {
 				this.startInterval()
 				console.log(event)
+				var viewPortWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+				var viewPortHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 				let {pageX,pageY,screenX,screenY,timeStamp,type,clientX,clientY} = event
 				timeSpent = Date.now() - timeSpent
 				let sectionName = event.target.id
 				// console.log(sectionName)
-				let payload = {pageX,pageY,screenX,screenY,timeStamp,type,clientY,clientX,timeSpent,sectionName}
+				let payload = {pageX,pageY,screenX,screenY,timeStamp,type,clientY,clientX,timeSpent,sectionName,viewPortWidth,viewPortHeight}
 				this.storage.push(payload)
 				console.log('payload')
 				console.log(payload)
