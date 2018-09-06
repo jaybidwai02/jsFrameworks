@@ -88,7 +88,7 @@ class App extends Component{
 			loadTime = loadTime/1000
 
 			let payload = {
-				url,userAgent,appVersion,appName,appCodeName,platform,vendor,domainName,browserName,browserVersion,osName,osVersion,deviceType,loadTime
+				url,userAgent,appVersion,appName,appCodeName,vendor,domainName,browserName,browserVersion,osName,osVersion,deviceType,loadTime
 			}
 
 			console.log(payload)
