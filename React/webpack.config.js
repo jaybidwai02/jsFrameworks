@@ -45,5 +45,6 @@ module.exports = {
         contentBase:"",
         inline:true,
         stats:"errors-only"
-    }
+    },
+    watch: true
 }

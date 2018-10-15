@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import Chart from 'react-d3-core'
 // import {LineChart} from 'react-d3-basic'
 import {BarChart,PieChart,AreaChart,LineChart} from 'react-d3-components'
+import {LineTooltip, PieTooltip} from 'react-d3-tooltip'
 
 export default class SiteChart extends Component{
 	constructor(props){
@@ -70,7 +71,7 @@ export default class SiteChart extends Component{
 
 		    return(
 		    	<div>
-		    	<LineChart
+		    	<LineTooltip
 		    	        margins= {margins}
 		    	        title={title}
 		    	        data={chartData}
@@ -106,18 +107,50 @@ export default class SiteChart extends Component{
 	}
 
 	renderPieChart(){
-		var data = {
-		        label: 'Platform',
-		        values: [
-		        {x: 'Windows', y: 80},
-		        {x: 'Mac', y: 15}, 
-		        {x: 'Android', y: 5}]
-		};
+		var width = 500,
+    height = 300,
+    title = "Pie Chart With Tooltip",
+    // value accessor
+    value = function(d) {
+      return +d.population;
+    },
+    // name accessor
+    name = function(d) {
+      return d.age;
+    },
+    // field means what your input field name is,
+    // name means the name show in the legend in your chart.
+    chartSeries = [
+      {
+        "field": "<5",
+        "name": "less than 5"
+      },
+      {
+        "field": "5-13",
+        "name": "5 to 13"
+      },
+      {
+        "field": "14-17",
+        "name": "14 to 17"
+      },
+      {
+        "field": "18-24",
+        "name": "18 to 24"
+      },
+      {
+        "field": "25-44",
+        "name": "25 to 44"
+      },
+      {
+        "field": "45-64",
+        "name": "45 to 64"
+      }
+    ];
 
 		return(
 			<section id="PieChart" className="charts">
-						<PieChart
-			                data={data}
+						<PieTooltip
+			                
 			                width={600}
 			                height={400}
 			                margin={{top: 10, bottom: 10, left: 100, right: 100}}
@@ -142,7 +175,7 @@ export default class SiteChart extends Component{
 
 			return(
 				<div>
-					<LineChart
+					<LineTooltip
 		                data={data}
 		                width={400}
 		                height={400}
@@ -169,7 +202,8 @@ export default class SiteChart extends Component{
 			<div>
 				<section id="chart">
 					{this.renderChart()}
-					{this.renderPieChart()}					
+					{this.renderPieChart()}	
+									
 				</section>				
 			</div>
 		)
