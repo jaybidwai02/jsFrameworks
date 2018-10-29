@@ -1,6 +1,6 @@
 module.exports = {
     context:"",
-    devtool:"inline-sourcemap",
+    devtool:"eval",
     entry: {
         app: "./js/src/ProReact.js",
         cardApp: "./js/src/CardApp.js",
@@ -19,6 +19,7 @@ module.exports = {
         tictaktoe:["./js/src/tic-tac-toe/tictaktoe.js"],
         reduxPoc:["./js/src/Redux/reduxPoc.js"],
         siteTrack:["./js/src/SiteTrack/index.js"],
+        eggheadRedux:["./js/src/egghead-redux/redux.js"],
     },
     module:{
     	loaders: [
